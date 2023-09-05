@@ -6,4 +6,8 @@ plotly
 numpy
 pandas
 PyYAML
+<<<<<<< HEAD
 statsmodels
+=======
+statsmodels
+>>>>>>> feedf96 (Write comments on TNC notebook)
