@@ -7,7 +7,12 @@ numpy
 pandas
 PyYAML
 <<<<<<< HEAD
+<<<<<<< HEAD
 statsmodels
 =======
 statsmodels
 >>>>>>> feedf96 (Write comments on TNC notebook)
+=======
+statsmodels
+jsonargparse[all]
+>>>>>>> b5f21d9 (Major refactoring and adding train scripts)
