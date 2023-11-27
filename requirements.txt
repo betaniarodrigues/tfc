@@ -16,7 +16,12 @@ statsmodels
 statsmodels
 jsonargparse[all]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> b5f21d9 (Major refactoring and adding train scripts)
 =======
 zarr
 >>>>>>> 695cf99 (Added zarr as requirements and simple TODO list)
+=======
+zarr
+rich
+>>>>>>> 03c145d (Documented TFC, added TFC scripts, added checkpoint_metric suport, and rich progress bar)
