@@ -41,6 +41,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["mock", "pytest", "black", "isort"]
+docs = ["sphinx", "sphinx-rtd-theme", "sphinx-autodoc-typehints", "sphinx-argparse", "sphinx", "sphinx-autoapi", "nbsphinx", "pandoc", "Ipython"]
 
 [project.urls]
 
@@ -48,5 +49,9 @@ dev = ["mock", "pytest", "black", "isort"]
 "Homepage" = "https://github.com/otavioon/ssl_tools"
 
 [tool.setuptools]
+<<<<<<< HEAD
 py-modules = ["ssl_tools"]
 
+=======
+py-modules = ["ssl_tools"]
+>>>>>>> 021243d (Addec docs)
