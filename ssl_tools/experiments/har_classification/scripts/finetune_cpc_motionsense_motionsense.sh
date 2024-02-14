@@ -2,8 +2,8 @@
 
 cd ..
 
-./cpc.py fit \
-    --data /workspaces/hiaac-m4/ssl_tools/data/standartized_balanced/MotionSense \
+python3 cpc.py fit \
+    --data /workspaces/betania.silva/data/standartized_balanced/MotionSense \
     --epochs 100 \
     --batch_size 128 \
     --accelerator gpu \
@@ -12,4 +12,5 @@ cd ..
     --training_mode finetune \
     --window_size 60 \
     --num_classes 6 \
-    --encoding_size 150 
+    --encoding_size 150 \
+    --conv_model True

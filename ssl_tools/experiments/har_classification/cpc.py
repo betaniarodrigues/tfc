@@ -4,7 +4,7 @@ import lightning as L
 import torch
 
 from ssl_tools.experiments import LightningSSLTrain, LightningTest, auto_main
-from ssl_tools.models.ssl.cpc import build_cpc
+from ssl_tools.models.ssl.cpc import build_cpc, build_cpc_conv
 from ssl_tools.data.data_modules import (
     MultiModalHARSeriesDataModule,
     UserActivityFolderDataModule,
@@ -20,8 +20,10 @@ class CPCTrain(LightningSSLTrain):
     def __init__(
         self,
         data: str,
+        conv_model: bool = True,
         encoding_size: int = 150,
         in_channel: int = 6,
+        flatten: bool = True,
         window_size: int = 4,
         pad_length: bool = False,
         num_classes: int = 6,
@@ -50,21 +52,32 @@ class CPCTrain(LightningSSLTrain):
         """
         super().__init__(*args, **kwargs)
         self.data = data
+        self.conv_model = conv_model
         self.encoding_size = encoding_size
         self.in_channel = in_channel
+        self.flatten = flatten
         self.window_size = window_size
         self.pad_length = pad_length
         self.num_classes = num_classes
         self.update_backbone = update_backbone
 
-    def get_pretrain_model(self) -> L.LightningModule:
-        model = build_cpc(
-            encoding_size=self.encoding_size,
-            in_channels=self.in_channel,
-            learning_rate=self.learning_rate,
-            window_size=self.window_size,
-            n_size=5,
-        )
+    def get_pretrain_model(self, conv_model: bool = True, flatten: bool = True) -> L.LightningModule:
+        if conv_model:
+            model = build_cpc_conv(
+                encoding_size=self.encoding_size,
+                num_channels=self.in_channel,
+                learning_rate=self.learning_rate,
+                flatten=flatten,
+                window_size=self.window_size,
+                n_size=5,
+                )
+        else:
+            model = build_cpc(
+                encoding_size=self.encoding_size,
+                in_channels=self.in_channel,
+                window_size=self.window_size,
+                n_size=5,
+            )
         return model
 
     def get_pretrain_data_module(self) -> L.LightningDataModule:
@@ -77,18 +90,26 @@ class CPCTrain(LightningSSLTrain):
         return data_module
 
     def get_finetune_model(
-        self, load_backbone: str = None
+        self, load_backbone: str = None, use_conv: bool = True, flatten: bool = False
     ) -> L.LightningModule:
-        model = self.get_pretrain_model()
+        if use_conv:
+            model = self.get_pretrain_model(flatten=flatten)
+        else:
+            model = self.get_pretrain_model()
 
         if load_backbone is not None:
             self.load_checkpoint(model, load_backbone)
 
-        classifier = CPCPredictionHead(
-            input_dim=self.encoding_size,
+        if use_conv:
+            classifier = CPCPredictionHead(
+            input_dim=self.encoding_size*60,
             output_dim=self.num_classes,
         )
-
+        else:
+            classifier = CPCPredictionHead(
+                input_dim=self.encoding_size,
+                output_dim=self.num_classes,
+            )
         task = "multiclass" if self.num_classes > 2 else "binary"
         model = SSLDiscriminator(
             backbone=model,
@@ -148,21 +169,37 @@ class CPCTest(LightningTest):
         self.window_size = window_size
         self.num_classes = num_classes
 
-    def get_model(self, load_backbone: str = None) -> L.LightningModule:
-        model = build_cpc(
-            encoding_size=self.encoding_size,
-            in_channels=self.in_channel,
-            window_size=self.window_size,
-            n_size=5,
-        )
+    def get_model(self, load_backbone: str = None, conv_model: bool = True, flatten: bool = True) -> L.LightningModule:
+        if conv_model:
+            model = build_cpc_conv(
+                encoding_size=self.encoding_size,
+                num_channels=self.in_channel,
+               # learning_rate=self.learning_rate,
+                flatten=flatten,
+                window_size=self.window_size,
+                n_size=5,
+                )
+        else:
+            model = build_cpc(
+                encoding_size=self.encoding_size,
+                in_channels=self.in_channel,
+                window_size=self.window_size,
+                n_size=5,
+            )
 
         if load_backbone is not None:
             self.load_checkpoint(model, load_backbone)
 
-        classifier = CPCPredictionHead(
-            input_dim=self.encoding_size,
+        if conv_model:
+            classifier = CPCPredictionHead(
+            input_dim=self.encoding_size*60,
             output_dim=self.num_classes,
         )
+        else:
+            classifier = CPCPredictionHead(
+                input_dim=self.encoding_size,
+                output_dim=self.num_classes,
+            )
 
         task = "multiclass" if self.num_classes > 2 else "binary"
         model = SSLDiscriminator(
