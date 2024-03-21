@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from typing import Any, List, Union
 from abc import abstractmethod
@@ -7,6 +8,7 @@ from lightning.pytorch.callbacks import ModelCheckpoint, RichProgressBar
 import torch
 from ssl_tools.callbacks.performance import PerformanceLog
 from ssl_tools.experiments.experiment import Experiment
+import pdb
 
 class LightningExperiment(Experiment):
     _MODEL_NAME: str = "model"
@@ -37,7 +39,7 @@ class LightningExperiment(Experiment):
         self.devices = devices
         self.strategy = strategy
         self.num_nodes = num_nodes
-        self.num_workers = num_workers
+        self.num_workers = num_workers or os.cpu_count()
         self.log_every_n_steps = log_every_n_steps
         
         self._model = None
@@ -356,6 +358,7 @@ class LightningTrain(LightningExperiment):
     ):
         print(f"Training will start")
         print(f"\tExperiment path: {self.experiment_dir}")
+        #pdb.set_trace()
         result = trainer.fit(model, data_module)
 
         print(f"Training finished")
