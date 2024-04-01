@@ -84,14 +84,14 @@ class CPC(L.LightningModule, Configurable):
         torch.Tensor
             A tensor of size (B, encoder_output_size), with the samples encoded.
         """
-        print("SAMPLE SHAPE:::::::::::::", sample.size())
+      #  print("SAMPLE SHAPE:::::::::::::", sample.size())
         z = self.encoder(sample)
 
-        print("Z SHAPE:::::::::::::", z.size())
+      #  print("Z SHAPE:::::::::::::", z.size())
 
         r_out, _ = self.auto_regressor(z, None)
 
-        print("R_out SHAPE11111111111111:::::::::::::", r_out.size())
+      #  print("R_out SHAPE11111111111111:::::::::::::", r_out.size())
 
         #ALTERANDO O R_OUT / PERMUTANDO
 
@@ -101,7 +101,7 @@ class CPC(L.LightningModule, Configurable):
 
         #_, r_out = self.auto_regressor(z, None)
 
-        print("R_out SHAPE:::::::::::::", r_out.size())
+      #  print("R_out SHAPE:::::::::::::", r_out.size())
 
 
         return r_out
@@ -128,9 +128,9 @@ class CPC(L.LightningModule, Configurable):
         #pdb.set_trace()
         # Remove the batch dimension if it is 1, and get the sample size (T)
         sample = sample.squeeze(0)
-        print("SAMPLE SHAPE:::::::::::::", sample.size())
+     #   print("SAMPLE SHAPE:::::::::::::", sample.size())
         time_len = sample.shape[-1] #TAMANHO DA AMOSTRA, ISTO É, VARIA PARA CADA USUÁRIO
-        print("SIZE OF TIME LEN:::::::::::::", time_len)
+      #  print("SIZE OF TIME LEN:::::::::::::", time_len)
         # Select a random time step in the range
         # [5 * window_size, T - 5 * window_size]
         # Just to make sure we have enough samples before and after the random
@@ -170,42 +170,41 @@ class CPC(L.LightningModule, Configurable):
         X_ts = torch.tensor(np.stack(X_ts, 0), device=self.device)
         # Encode the windows into a Z-vector.
         # The encoder takes a tensor of shape (B, C, T), where B is the batch
-        print("X_TS SHAPE:::::::::::::", X_ts.size())
+       # print("X_TS SHAPE:::::::::::::", X_ts.size())
         #ALTERANDO
         #self.encoder = self.encoder.squeeze(0)
 
         encodings = self.encoder(X_ts)
-        print('encodings shape:::::::::::::', encodings.size())
-        print('encodings:::::::::::::', len(encodings))
 
+        print("ENCODINGS SHAPE:::::::::::::", encodings.size()) #ENCODINGS SHAPE::::::::::: torch.Size([40 = COMPRIMENTO DE CADA SEQUENCIA, 50 = window_size, 128 = saída  da CNN])
         # Select a random time step t, spliting the sample into past and future.
         # t is in the range [2, len(encodings) - 2], thus ensuring that "past"
         # and "future" have at least 2 elements.
         random_t = np.random.randint(2, len(encodings) - 2)
-        print('random_t:::::::::::::', random_t)
 
         # Split the encodings into "past" and "future"
         # Pick 10 elements before the random_t and 1 element after it
         # Past shape = (S, encoding_size), where 2 < S < 12
         past = encodings[max(0, random_t - 10) : random_t + 1]
-        print("PAST SHAPE111111:::::::::::::", past.size())
+        print("PAST SHAPE:::::::::::::", past.size()) #
+        
+        #PERMUTANDO O PAST PARA FUNCIONAR O C_T
+        #past = past.permute(1, 0, 2)
+        #print("PAST SHAPE:::::::::::::", past.size())
         # Add the batch dimension (batch=1).
         # Past shape = (1, S, encoding_size)
         #ALTERANDO COMNETANDO O UNSQUEEZE
        # past = past.unsqueeze(0)
-
-        print("PAST SHAPE:::::::::::::", past.size())
-
         # Generate the context vector (c_t) using the "past" representations.
-        
-        #Fazendo um teste
-
+        #PESSOAL DO CPC FAZ ISSO
         c_t, _ = self.auto_regressor(past)
-
-        print("C_T SHAPE:::::::::::::", c_t.size()) #C_T SHAPE::::::::::: torch.Size([1 = BATCH, 11 = COMPRIMENTO DE CADA SEQUENCIA, 150 = REPRESENTAÇÃO/ENCODING_SIZE])
+        
+       #print("C_T SHAPE:::::::::::::", c_t.size()) #C_T SHAPE::::::::::: torch.Size([1 = BATCH, 11 = COMPRIMENTO DE CADA SEQUENCIA, 150 = REPRESENTAÇÃO/ENCODING_SIZE])
         #_, c_t = self.auto_regressor(past)
-        # Flatten it to pass to a linear layer
+        #PESSOAL DO CPC FAZ ISSO
+        #c_t = c_t[:, random_t, :].squeeze(1)
         c_t = c_t.squeeze(1).squeeze(0)  # Equivalent to c_t.view(-1)
+        #print("C_T SHAPE:::::::::::::", c_t.size()) #C_T SHAPE::::::::::: torch.Size([11 = COMPRIMENTO DE CADA SEQUENCIA, 150 = REPRESENTAÇÃO/ENCODING_SIZE])
         # Generate the density ratios
         densities = self.density_estimator(c_t)
         print("DENSITIES SHAPE:::::::::::::", densities.size()) #DENSITIES SHAPE::::::::::: torch.Size([11 = COMPRIMENTO DE CADA SEQUENCIA, 150 = REPRESENTAÇÃO/ENCODING_SIZE])
@@ -216,11 +215,10 @@ class CPC(L.LightningModule, Configurable):
         #     densities.transpose(0, 1),
         # )
 
-        #NOVO LOG_DENSITY_RATIOS ENCODINGS = (40, 60, 128) E DENSITIES = (11, 60, 128)
-
+      #  print("ENCODINGS SHAPE:::::::::::::", encodings.size()) #ENCODINGS SHAPE::::::::::: torch.Size([40 = COMPRIMENTO DE CADA SEQUENCIA, 150 = REPRESENTAÇÃO/ENCODING_SIZE])
         log_density_ratios = torch.bmm(
-            encodings.permute(2, 0, 1),
-            densities.permute(2, 1, 0),
+            encodings.permute(1, 0, 2),
+            densities.permute(1, 2, 0),
         )
 
         # Ravel density ratios

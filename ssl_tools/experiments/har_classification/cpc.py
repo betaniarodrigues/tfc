@@ -2,6 +2,7 @@
 
 import lightning as L
 import torch
+import torch.nn.init as init
 
 from ssl_tools.experiments import LightningSSLTrain, LightningTest, auto_main
 from ssl_tools.models.ssl.cpc import build_cpc, build_cpc_conv
@@ -92,15 +93,26 @@ class CPCTrain(LightningSSLTrain):
     ) -> L.LightningModule:
         model = self.get_pretrain_model()
 
-        print("Loading backbone model...", model)
+       # print("Loading backbone model...", model)
         
         if load_backbone is not None:
             self.load_checkpoint(model, load_backbone)
 
+        #ALTERANDO
+
+        # IF LOAD_BACKBONE IS NONE, THEN LOAD THE WEIGHTS RANDOMLY
+        
+        else:
+            for param in model.parameters():
+                if len(param.shape) >= 2:
+                    init.kaiming_normal_(param)
+                else:
+                    init.constant_(param, 0)
+
         if self.backbone_model == "conv1D":
             classifier = CPCPredictionHead(
-                input_dim=150,
-                hidden_dim1=150,
+                input_dim=self.encoding_size,
+                hidden_dim1=self.encoding_size,
                 hidden_dim2=128,
                 output_dim=self.num_classes,
             )
@@ -140,8 +152,8 @@ class CPCTest(LightningTest):
     def __init__(
         self,
         data: str,
-        encoding_size: int = 150,
-        in_channel: int = 6,
+        encoding_size: int = 256,
+        in_channels: int = 6,
         window_size: int = 4,
         num_classes: int = 6,
         backbone_model: str = "gru",
@@ -167,7 +179,7 @@ class CPCTest(LightningTest):
         super().__init__(*args, **kwargs)
         self.data = data
         self.encoding_size = encoding_size
-        self.in_channel = in_channel
+        self.in_channels = in_channels
         self.window_size = window_size
         self.num_classes = num_classes
         self.backbone_model = backbone_model
@@ -176,14 +188,14 @@ class CPCTest(LightningTest):
         if self.backbone_model == "conv1D":
             model = build_cpc_conv(
                 encoding_size=self.encoding_size,
-                num_channels=self.in_channel,
+                in_channels=self.in_channels,
                 window_size=self.window_size,
                 n_size=5,
             )
         else:
             model = build_cpc(
             encoding_size=self.encoding_size,
-            in_channels=self.in_channel,
+            in_channels=self.in_channels,
             window_size=self.window_size,
             n_size=5,
         )

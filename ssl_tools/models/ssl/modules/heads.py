@@ -44,8 +44,8 @@ class TFCPredictionHead(ProjectionHead):
 class TNCPredictionHead(ProjectionHead):
     def __init__(
         self,
-        input_dim: int = 60,
-        hidden_dim1: int = 150,
+        input_dim: int = 256,
+        hidden_dim1: int = 256,
         hidden_dim2: int = 128,
         output_dim: int = 7,
         dropout_prob: float = 0.2,
@@ -81,7 +81,7 @@ class TNCPredictionHead(ProjectionHead):
     
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = super().forward(x)
-        print('TNCPredictionHead x:::::::::', x.size())
+        #print('TNCPredictionHead x:::::::::', x.size())
         return x
 
 class CPCPredictionHead(TNCPredictionHead):
