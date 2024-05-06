@@ -22,7 +22,9 @@ class CNNEncoder(nn.Module):
         )
 
     def forward(self, x):
-
+   
+        print("x::::::::::::", x.shape) 
+        x = x.permute(0, 2, 1)
         x = x.to(self.device)  # Mova os dados para a GPU, se disponível
         
         x = self.conv1(x)
@@ -31,6 +33,7 @@ class CNNEncoder(nn.Module):
 
         x = x.permute(0, 2, 1)  # Permute para [batch_size, seq_len, num_channels_saída]
      
+        print("x222222222::::::::::::", x.shape)
         #Aplana a duas primeiras dimensões (treinamento da tarefa pretexto)
       #  x = x.reshape(-1, x.size(-1))      
 

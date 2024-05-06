@@ -12,6 +12,7 @@ class ConcatDataset:
     @staticmethod
     def _get_slices(datasets):
         i = 0
+        print("datasets: ", datasets)
         slices = []
         for d in datasets:
             i += len(d)

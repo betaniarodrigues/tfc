@@ -17,6 +17,28 @@ from ssl_tools.utils.types import PathLike
 
 import lightning as L
 
+import numpy as np
+
+#Add sliding_window function for segmentation of time series data for CPC
+
+from ssl_tools.data.datasets.sliding_window import sliding_window
+
+def opp_sliding_window(data_x, data_y, ws, ss):
+    
+    # data_x são os dados, data_y são os rótulos, ws é o tamanho da janela = 50, ss é o overlap = 25
+    
+    data_x = sliding_window(data_x, (ws, data_x.shape[1]), (ss, 1))
+
+    #sliding_window(a = data_x, ws = (50, 6), ss = (25, 1))
+
+    # a = matriz n-dimensional, ws = representa o tamanho de cada dimensão da janela, 
+    # ss = representa a quantidade de deslizamento da janela em cada dimensão. Se não for especificado, ele será ws.
+
+    # Just making it a vector if it was a 2D matrix
+    data_y = np.reshape(data_y, (len(data_y),))
+    data_y = np.asarray([[i[-1]] for i in sliding_window(data_y, ws, ss)])
+    return data_x.astype(np.float32), data_y.reshape(len(data_y)). \
+        astype(np.uint8)
 
 def parse_transforms(
     transforms: Union[List[Callable], Dict[str, List[Callable]]]
@@ -193,6 +215,7 @@ class UserActivityFolderDataModule(L.LightningDataModule):
         # ---- Class specific ----
         self.datasets = {}
 
+
     def _load_dataset(self, split_name: str) -> SeriesFolderCSVDataset:
         """Create a ``SeriesFolderCSVDataset`` dataset with the given split.
 
@@ -224,6 +247,7 @@ class UserActivityFolderDataModule(L.LightningDataModule):
             pad=self.pad,
             transforms=self.transforms[split_name],
             cast_to=self.cast_to,
+            
         )
 
     def setup(self, stage: str):
@@ -244,6 +268,7 @@ class UserActivityFolderDataModule(L.LightningDataModule):
         ValueError
             If the stage is not one of: "fit", "test" or "predict"
         """
+
         if stage == "fit":
             self.datasets["train"] = self._load_dataset("train")
             self.datasets["validation"] = self._load_dataset("validation")

@@ -362,24 +362,29 @@ class SeriesFolderCSVDataset:
             specified, the second element is None.
         """
         # Read the data
-        original_data = pd.read_csv(path)
+        data = []
+        for path in self._files:
+            original_data = pd.read_csv(path)
 
-        # Collect the features
-        if self.features is None:
-            selected_columns = [
-                col for col in original_data.columns if col != self.label
-            ]
-        else:
-            selected_columns = self.features
-        # Transform it to a list if it is not
-        selected_columns = list(selected_columns)
-
-        data = original_data[selected_columns].values
-        data = data.swapaxes(0, 1)
+            # Collect the features
+            if self.features is None:
+                selected_columns = [
+                    col for col in original_data.columns if col != self.label
+                ]
+            else:
+                selected_columns = self.features
+            # Transform it to a list if it is not
+            selected_columns = list(selected_columns)
+            data.append(original_data[selected_columns].values)
+        
+        data = np.concatenate(data)
+        #data = data.swapaxes(0, 1)
 
         # Cast the data to the specified type
         if self.cast_to:
             data = data.astype(self.cast_to)
+        
+        print("DATA_B", data.shape)
 
         # Read the label if specified and return the data and the label
         if self.label is not None:

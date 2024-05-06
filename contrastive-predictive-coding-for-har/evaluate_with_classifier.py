@@ -105,6 +105,9 @@ def train(model, data_loader, criterion, optimizer, scheduler, args, epoch,
         inputs = inputs.float().to(args.device)
         labels = labels.long().to(args.device)
 
+        # print("INPUTS", inputs.shape)
+        # print("LABELS",labels.shape)
+
         optimizer.zero_grad()
 
         with torch.set_grad_enabled(True):

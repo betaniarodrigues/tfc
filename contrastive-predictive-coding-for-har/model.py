@@ -130,9 +130,18 @@ class Convolutional1DEncoder(nn.Module):
 
     def forward(self, inputs):
         # Tranposing since the Conv1D requires
+
+       # print("Inputs1:", inputs.shape)
+
         inputs = inputs.permute(0, 2, 1)
+
+        #print("Inputs2", inputs.shape)
+
         encoder = self.encoder(inputs)
+
         encoder = encoder.permute(0, 2, 1)
+
+        #print("INPUTS3", encoder.shape)
 
         return encoder
 

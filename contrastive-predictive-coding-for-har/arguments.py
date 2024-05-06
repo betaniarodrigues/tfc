@@ -19,7 +19,7 @@ def parse_args():
     # Training settings
     parser.add_argument('-b', '--batch_size', type=int, default=64)
     parser.add_argument('--learning_rate', type=float, default=5e-4)
-    parser.add_argument('--num_epochs', type=int, default=150)
+    parser.add_argument('--num_epochs', type=int, default=5)
     parser.add_argument('--gpu_id', type=str, default='0')
 
     # Dataset to train on
@@ -40,7 +40,7 @@ def parse_args():
     parser.add_argument('--classifier_batch_size', type=int, default=256)
     parser.add_argument('--saved_model', type=str, default=None,
                         help='Full path of the learned CPC model')
-    parser.add_argument('--learning_schedule', type=str, default='last_layer',
+    parser.add_argument('--learning_schedule', type=str, default='all_layers',
                         choices=['last_layer', 'all_layers'],
                         help='last layer freezes the encoder weights but '
                              'all_layers does not.')
@@ -52,11 +52,20 @@ def parse_args():
     args = parser.parse_args()
 
     # Setting parameters by the dataset
-    if args.dataset == 'mobiact':
-        args.input_size = 6
-        args.num_classes = 11
-        args.root_dir = 'data'
-        args.data_file = 'mobiact.mat'
+    
+    for dset in ['uci', 'wisdm', 'motionsense', 'kuhar', 'realworld_thigh', 'realworld_waist']:
+        if args.dataset == dset:
+            args.input_size = 6
+            args.num_classes = 7
+            args.root_dir = '/workspaces/betania.silva/view_concatenated'
+            args.data_file = dset
+            break
+
+    # if args.dataset == 'uci':
+    #     args.input_size = 6
+    #     args.num_classes = 6
+    #     args.root_dir = '/workspaces/betania.silva/view_concatenated'
+    #     args.data_file = 'UCI'
 
     args.device = torch.device(
         "cuda:" + str(args.gpu_id) if torch.cuda.is_available() else "cpu")
