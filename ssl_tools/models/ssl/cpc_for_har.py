@@ -45,10 +45,10 @@ class CPC(L.LightningModule, Configurable):
         self.weight_decay = weight_decay
 
     def forward(self, inputs):
-       # print("inputs: ", inputs.shape)
         z = self.g_enc(inputs)
         start = torch.randint(int(inputs.shape[1] - self.num_steps_prediction),
                               size=(1,)).long()
+        print("start: ", start)
         rnn_input = z[:, :start + 1, :]
         r_out, _ = self.g_ar(rnn_input, None)
 
@@ -62,17 +62,21 @@ class CPC(L.LightningModule, Configurable):
 
         z_samples = z[:, t + 1: t + 1 + self.num_steps_prediction, :].permute(1, 0, 2)
 
+        print("z_samples: ", z_samples.shape)
+
         nce = 0
         correct = 0
         correct_steps = []
 
         for k in range(self.num_steps_prediction):
             log_density_ratio = torch.mm(z_samples[k], pred[k].transpose(0, 1))
+            print("log_density_ratio: ", log_density_ratio.shape)
             positive_batch_pred = torch.argmax(self.softmax(log_density_ratio), dim=0)
             positive_batch_actual = torch.arange(0, batch_size).to(self.device)
             correct = (correct + torch.sum(torch.eq(positive_batch_pred, positive_batch_actual)).item())
             correct_steps.append(torch.sum(torch.eq(positive_batch_pred, positive_batch_actual)).item())
             nce = nce + torch.sum(torch.diag(self.lsoftmax(log_density_ratio)))
+            print("nce: ", nce)
 
         nce = nce / (-1.0 * batch_size * self.num_steps_prediction)
         accuracy = correct / (1.0 * batch_size * self.num_steps_prediction)
@@ -81,7 +85,9 @@ class CPC(L.LightningModule, Configurable):
 
     def training_step(self, batch, batch_idx):
         inputs = batch
+        print("inputs: ", inputs.shape)
         accuracy, nce, _ = self.forward(inputs)
+        #print("nce: ", nce)
         self.log('train_loss',
                 nce,
                 on_epoch=True,

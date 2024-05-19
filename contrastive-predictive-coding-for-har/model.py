@@ -36,6 +36,7 @@ class CPC(nn.Module):
     def forward(self, inputs):
         # Passing through the encoder. Input: BxCxT and output is: Bx128XT
         z = self.encoder(inputs)
+      #  print("ZZZZZZZZZZ", z.shape)
 
         # Random timestep to start the future prediction from.
         # If the window is 50 timesteps and k=12, we pick a number from 0-37
@@ -45,8 +46,12 @@ class CPC(nn.Module):
         # Need to pick the encoded data only until the starting timestep
         rnn_input = z[:, :start + 1, :]
 
+        #print("RNN_INPUT", rnn_input.shape)
+
         # Passing through the RNN
         r_out, (_) = self.rnn(rnn_input, None)
+
+        #print("R_OUT", r_out.shape)
 
         accuracy, nce, correct_steps = self.compute_cpc_loss(z, r_out, start)
 
@@ -57,6 +62,7 @@ class CPC(nn.Module):
 
         # The context vector is the last timestep from the RNN
         c_t = c[:, t, :].squeeze(1)
+        #print("AQUI É O C_T", c_t.shape)
 
         # infer z_{t+k} for each step in the future: c_t*Wk, where 1 <= k <=
         # timestep

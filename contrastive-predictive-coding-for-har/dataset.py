@@ -83,7 +83,7 @@ class HARDataset(Dataset):
 
                # print("X", len(datas_x))
 
-                y = data['standard activity code'].values
+                y = data['activity code'].values
 
                 data_y.append(y)
 

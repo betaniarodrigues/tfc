@@ -1,0 +1,919 @@
+Namespace(window=50, overlap=25, batch_size=64, learning_rate=0.0005, num_epochs=150, gpu_id='0', dataset='realworld_thigh', kernel_size=3, num_steps_prediction=28, classifier_lr=0.0005, classifier_batch_size=256, saved_model='/workspaces/betania.silva/ssl_tools/contrastive-predictive-coding-for-har/models/May-11-2024/kuhar_k_28_lr_0.0005_bs_64.pkl', learning_schedule='all_layers', random_seed=42, input_size=6, num_classes=7, root_dir='/workspaces/betania.silva/view_concatenated', data_file='realworld_thigh', device=device(type='cuda', index=0), padding=1)
+Data Raw (733232, 6)
+Data (29328, 50, 6)
+Labels (29328,)
+Data Raw (159355, 6)
+Data (6373, 50, 6)
+Labels (6373,)
+Data Raw (216933, 6)
+Data (8676, 50, 6)
+Labels (8676,)
+The batch size for train phase is: 256
+The batch size for val phase is: 256
+The batch size for test phase is: 256
+Loading the pre-trained weights
+Epoch 0/149
+----------
+The epoch: 0 | phase: train | loss: 0.8266 | accuracy: 0.6876 | mean f1-score: 0.5842 | weighted f1-score: 0.6906
+The epoch: 0 | phase: val | loss: 0.8440 | accuracy: 0.6978 | mean f1-score: 0.7016 | weighted f1-score: 0.7037
+The epoch: 0 | phase: test | loss: 0.7371 | accuracy: 0.7189 | mean f1-score: 0.7132 | weighted f1-score: 0.7189
+Epoch 0 completed in 0m 5s
+Epoch 1/149
+----------
+The epoch: 1 | phase: train | loss: 0.4505 | accuracy: 0.8580 | mean f1-score: 0.8595 | weighted f1-score: 0.8600
+The epoch: 1 | phase: val | loss: 0.9447 | accuracy: 0.6819 | mean f1-score: 0.6848 | weighted f1-score: 0.6861
+The epoch: 1 | phase: test | loss: 0.8006 | accuracy: 0.7226 | mean f1-score: 0.7172 | weighted f1-score: 0.7197
+Epoch 1 completed in 0m 4s
+Epoch 2/149
+----------
+The epoch: 2 | phase: train | loss: 0.3416 | accuracy: 0.8953 | mean f1-score: 0.8966 | weighted f1-score: 0.8962
+The epoch: 2 | phase: val | loss: 1.2969 | accuracy: 0.6829 | mean f1-score: 0.6717 | weighted f1-score: 0.6782
+The epoch: 2 | phase: test | loss: 0.6948 | accuracy: 0.7945 | mean f1-score: 0.7930 | weighted f1-score: 0.7940
+Epoch 2 completed in 0m 4s
+Epoch 3/149
+----------
+The epoch: 3 | phase: train | loss: 0.2879 | accuracy: 0.9098 | mean f1-score: 0.9106 | weighted f1-score: 0.9099
+The epoch: 3 | phase: val | loss: 1.2452 | accuracy: 0.6506 | mean f1-score: 0.6012 | weighted f1-score: 0.6083
+The epoch: 3 | phase: test | loss: 0.8369 | accuracy: 0.6895 | mean f1-score: 0.6818 | weighted f1-score: 0.6786
+Epoch 3 completed in 0m 4s
+Epoch 4/149
+----------
+The epoch: 4 | phase: train | loss: 0.2473 | accuracy: 0.9224 | mean f1-score: 0.9229 | weighted f1-score: 0.9224
+The epoch: 4 | phase: val | loss: 0.8237 | accuracy: 0.7359 | mean f1-score: 0.7389 | weighted f1-score: 0.7392
+The epoch: 4 | phase: test | loss: 0.7764 | accuracy: 0.7778 | mean f1-score: 0.7727 | weighted f1-score: 0.7703
+Epoch 4 completed in 0m 4s
+Epoch 5/149
+----------
+The epoch: 5 | phase: train | loss: 0.2164 | accuracy: 0.9337 | mean f1-score: 0.9338 | weighted f1-score: 0.9337
+The epoch: 5 | phase: val | loss: 1.2064 | accuracy: 0.6427 | mean f1-score: 0.6319 | weighted f1-score: 0.6364
+The epoch: 5 | phase: test | loss: 0.7813 | accuracy: 0.7838 | mean f1-score: 0.7807 | weighted f1-score: 0.7792
+Epoch 5 completed in 0m 4s
+Epoch 6/149
+----------
+The epoch: 6 | phase: train | loss: 0.1919 | accuracy: 0.9419 | mean f1-score: 0.9416 | weighted f1-score: 0.9419
+The epoch: 6 | phase: val | loss: 1.4503 | accuracy: 0.6178 | mean f1-score: 0.5985 | weighted f1-score: 0.6040
+The epoch: 6 | phase: test | loss: 1.2213 | accuracy: 0.6398 | mean f1-score: 0.6353 | weighted f1-score: 0.6341
+Epoch 6 completed in 0m 4s
+Epoch 7/149
+----------
+The epoch: 7 | phase: train | loss: 0.1783 | accuracy: 0.9479 | mean f1-score: 0.9476 | weighted f1-score: 0.9479
+The epoch: 7 | phase: val | loss: 1.4213 | accuracy: 0.6184 | mean f1-score: 0.5971 | weighted f1-score: 0.6030
+The epoch: 7 | phase: test | loss: 1.0942 | accuracy: 0.7204 | mean f1-score: 0.7104 | weighted f1-score: 0.7075
+Epoch 7 completed in 0m 4s
+Epoch 8/149
+----------
+The epoch: 8 | phase: train | loss: 0.1614 | accuracy: 0.9530 | mean f1-score: 0.9528 | weighted f1-score: 0.9530
+The epoch: 8 | phase: val | loss: 1.2180 | accuracy: 0.6774 | mean f1-score: 0.6520 | weighted f1-score: 0.6556
+The epoch: 8 | phase: test | loss: 1.1215 | accuracy: 0.7112 | mean f1-score: 0.7080 | weighted f1-score: 0.7079
+Epoch 8 completed in 0m 4s
+Epoch 9/149
+----------
+The epoch: 9 | phase: train | loss: 0.1487 | accuracy: 0.9560 | mean f1-score: 0.9558 | weighted f1-score: 0.9560
+The epoch: 9 | phase: val | loss: 1.4388 | accuracy: 0.6539 | mean f1-score: 0.6540 | weighted f1-score: 0.6581
+The epoch: 9 | phase: test | loss: 1.2048 | accuracy: 0.7448 | mean f1-score: 0.7366 | weighted f1-score: 0.7330
+Epoch 9 completed in 0m 4s
+Epoch 10/149
+----------
+The epoch: 10 | phase: train | loss: 0.1428 | accuracy: 0.9566 | mean f1-score: 0.9563 | weighted f1-score: 0.9566
+The epoch: 10 | phase: val | loss: 1.7343 | accuracy: 0.5686 | mean f1-score: 0.5352 | weighted f1-score: 0.5408
+The epoch: 10 | phase: test | loss: 1.4136 | accuracy: 0.6443 | mean f1-score: 0.6290 | weighted f1-score: 0.6265
+Epoch 10 completed in 0m 4s
+Epoch 11/149
+----------
+The epoch: 11 | phase: train | loss: 0.1369 | accuracy: 0.9593 | mean f1-score: 0.9591 | weighted f1-score: 0.9592
+The epoch: 11 | phase: val | loss: 1.4673 | accuracy: 0.6298 | mean f1-score: 0.6126 | weighted f1-score: 0.6182
+The epoch: 11 | phase: test | loss: 1.2162 | accuracy: 0.7104 | mean f1-score: 0.7012 | weighted f1-score: 0.6977
+Epoch 11 completed in 0m 4s
+Epoch 12/149
+----------
+The epoch: 12 | phase: train | loss: 0.1305 | accuracy: 0.9622 | mean f1-score: 0.9620 | weighted f1-score: 0.9622
+The epoch: 12 | phase: val | loss: 1.6384 | accuracy: 0.6211 | mean f1-score: 0.5963 | weighted f1-score: 0.6030
+The epoch: 12 | phase: test | loss: 1.6331 | accuracy: 0.6963 | mean f1-score: 0.6725 | weighted f1-score: 0.6664
+Epoch 12 completed in 0m 4s
+Epoch 13/149
+----------
+The epoch: 13 | phase: train | loss: 0.1242 | accuracy: 0.9619 | mean f1-score: 0.9617 | weighted f1-score: 0.9619
+The epoch: 13 | phase: val | loss: 1.5904 | accuracy: 0.6127 | mean f1-score: 0.5899 | weighted f1-score: 0.5956
+The epoch: 13 | phase: test | loss: 1.1041 | accuracy: 0.6950 | mean f1-score: 0.6898 | weighted f1-score: 0.6858
+Epoch 13 completed in 0m 4s
+Epoch 14/149
+----------
+The epoch: 14 | phase: train | loss: 0.1226 | accuracy: 0.9638 | mean f1-score: 0.9636 | weighted f1-score: 0.9637
+The epoch: 14 | phase: val | loss: 1.8687 | accuracy: 0.6192 | mean f1-score: 0.6007 | weighted f1-score: 0.6100
+The epoch: 14 | phase: test | loss: 1.4232 | accuracy: 0.6783 | mean f1-score: 0.6666 | weighted f1-score: 0.6619
+Epoch 14 completed in 0m 4s
+Epoch 15/149
+----------
+The epoch: 15 | phase: train | loss: 0.1171 | accuracy: 0.9651 | mean f1-score: 0.9649 | weighted f1-score: 0.9650
+The epoch: 15 | phase: val | loss: 1.2739 | accuracy: 0.6694 | mean f1-score: 0.6634 | weighted f1-score: 0.6693
+The epoch: 15 | phase: test | loss: 1.3393 | accuracy: 0.7000 | mean f1-score: 0.6909 | weighted f1-score: 0.6876
+Epoch 15 completed in 0m 4s
+Epoch 16/149
+----------
+The epoch: 16 | phase: train | loss: 0.1130 | accuracy: 0.9665 | mean f1-score: 0.9665 | weighted f1-score: 0.9665
+The epoch: 16 | phase: val | loss: 1.5333 | accuracy: 0.5886 | mean f1-score: 0.5654 | weighted f1-score: 0.5719
+The epoch: 16 | phase: test | loss: 1.2498 | accuracy: 0.6918 | mean f1-score: 0.6817 | weighted f1-score: 0.6767
+Epoch 16 completed in 0m 4s
+Epoch 17/149
+----------
+The epoch: 17 | phase: train | loss: 0.1025 | accuracy: 0.9694 | mean f1-score: 0.9694 | weighted f1-score: 0.9694
+The epoch: 17 | phase: val | loss: 1.7241 | accuracy: 0.6245 | mean f1-score: 0.6126 | weighted f1-score: 0.6234
+The epoch: 17 | phase: test | loss: 1.4551 | accuracy: 0.6841 | mean f1-score: 0.6689 | weighted f1-score: 0.6641
+Epoch 17 completed in 0m 3s
+Epoch 18/149
+----------
+The epoch: 18 | phase: train | loss: 0.1022 | accuracy: 0.9688 | mean f1-score: 0.9688 | weighted f1-score: 0.9688
+The epoch: 18 | phase: val | loss: 1.5473 | accuracy: 0.6306 | mean f1-score: 0.6241 | weighted f1-score: 0.6295
+The epoch: 18 | phase: test | loss: 1.4950 | accuracy: 0.7168 | mean f1-score: 0.7099 | weighted f1-score: 0.7057
+Epoch 18 completed in 0m 4s
+Epoch 19/149
+----------
+The epoch: 19 | phase: train | loss: 0.1001 | accuracy: 0.9692 | mean f1-score: 0.9691 | weighted f1-score: 0.9692
+The epoch: 19 | phase: val | loss: 1.3963 | accuracy: 0.6462 | mean f1-score: 0.6464 | weighted f1-score: 0.6520
+The epoch: 19 | phase: test | loss: 1.2607 | accuracy: 0.7023 | mean f1-score: 0.6921 | weighted f1-score: 0.6873
+Epoch 19 completed in 0m 4s
+Epoch 20/149
+----------
+The epoch: 20 | phase: train | loss: 0.0966 | accuracy: 0.9698 | mean f1-score: 0.9697 | weighted f1-score: 0.9698
+The epoch: 20 | phase: val | loss: 1.7030 | accuracy: 0.6615 | mean f1-score: 0.6572 | weighted f1-score: 0.6631
+The epoch: 20 | phase: test | loss: 1.5890 | accuracy: 0.7182 | mean f1-score: 0.7103 | weighted f1-score: 0.7055
+Epoch 20 completed in 0m 5s
+Epoch 21/149
+----------
+The epoch: 21 | phase: train | loss: 0.0978 | accuracy: 0.9700 | mean f1-score: 0.9698 | weighted f1-score: 0.9700
+The epoch: 21 | phase: val | loss: 1.4815 | accuracy: 0.6404 | mean f1-score: 0.6067 | weighted f1-score: 0.6140
+The epoch: 21 | phase: test | loss: 1.2970 | accuracy: 0.6524 | mean f1-score: 0.6464 | weighted f1-score: 0.6414
+Epoch 21 completed in 0m 4s
+Epoch 22/149
+----------
+The epoch: 22 | phase: train | loss: 0.0911 | accuracy: 0.9723 | mean f1-score: 0.9720 | weighted f1-score: 0.9723
+The epoch: 22 | phase: val | loss: 1.5463 | accuracy: 0.6446 | mean f1-score: 0.6372 | weighted f1-score: 0.6448
+The epoch: 22 | phase: test | loss: 1.4942 | accuracy: 0.6955 | mean f1-score: 0.6767 | weighted f1-score: 0.6712
+Epoch 22 completed in 0m 4s
+Epoch 23/149
+----------
+The epoch: 23 | phase: train | loss: 0.0862 | accuracy: 0.9734 | mean f1-score: 0.9733 | weighted f1-score: 0.9734
+The epoch: 23 | phase: val | loss: 1.6126 | accuracy: 0.6072 | mean f1-score: 0.5923 | weighted f1-score: 0.5956
+The epoch: 23 | phase: test | loss: 1.5256 | accuracy: 0.7064 | mean f1-score: 0.6998 | weighted f1-score: 0.6948
+Epoch 23 completed in 0m 4s
+Epoch 24/149
+----------
+The epoch: 24 | phase: train | loss: 0.0828 | accuracy: 0.9747 | mean f1-score: 0.9746 | weighted f1-score: 0.9747
+The epoch: 24 | phase: val | loss: 1.6759 | accuracy: 0.5983 | mean f1-score: 0.5686 | weighted f1-score: 0.5753
+The epoch: 24 | phase: test | loss: 1.4347 | accuracy: 0.6802 | mean f1-score: 0.6791 | weighted f1-score: 0.6727
+Epoch 24 completed in 0m 4s
+Epoch 25/149
+----------
+The epoch: 25 | phase: train | loss: 0.0772 | accuracy: 0.9760 | mean f1-score: 0.9758 | weighted f1-score: 0.9760
+The epoch: 25 | phase: val | loss: 1.4836 | accuracy: 0.6212 | mean f1-score: 0.6009 | weighted f1-score: 0.6042
+The epoch: 25 | phase: test | loss: 1.4191 | accuracy: 0.6830 | mean f1-score: 0.6763 | weighted f1-score: 0.6715
+Epoch 25 completed in 0m 4s
+Epoch 26/149
+----------
+The epoch: 26 | phase: train | loss: 0.0741 | accuracy: 0.9766 | mean f1-score: 0.9766 | weighted f1-score: 0.9766
+The epoch: 26 | phase: val | loss: 1.5846 | accuracy: 0.6196 | mean f1-score: 0.5984 | weighted f1-score: 0.6028
+The epoch: 26 | phase: test | loss: 1.4816 | accuracy: 0.6782 | mean f1-score: 0.6702 | weighted f1-score: 0.6640
+Epoch 26 completed in 0m 4s
+Epoch 27/149
+----------
+The epoch: 27 | phase: train | loss: 0.0742 | accuracy: 0.9767 | mean f1-score: 0.9765 | weighted f1-score: 0.9767
+The epoch: 27 | phase: val | loss: 1.4468 | accuracy: 0.6584 | mean f1-score: 0.6343 | weighted f1-score: 0.6422
+The epoch: 27 | phase: test | loss: 1.4268 | accuracy: 0.6838 | mean f1-score: 0.6709 | weighted f1-score: 0.6660
+Epoch 27 completed in 0m 4s
+Epoch 28/149
+----------
+The epoch: 28 | phase: train | loss: 0.0726 | accuracy: 0.9773 | mean f1-score: 0.9770 | weighted f1-score: 0.9772
+The epoch: 28 | phase: val | loss: 1.4868 | accuracy: 0.6355 | mean f1-score: 0.6216 | weighted f1-score: 0.6232
+The epoch: 28 | phase: test | loss: 1.5449 | accuracy: 0.6879 | mean f1-score: 0.6746 | weighted f1-score: 0.6706
+Epoch 28 completed in 0m 4s
+Epoch 29/149
+----------
+The epoch: 29 | phase: train | loss: 0.0686 | accuracy: 0.9784 | mean f1-score: 0.9782 | weighted f1-score: 0.9784
+The epoch: 29 | phase: val | loss: 1.4779 | accuracy: 0.6791 | mean f1-score: 0.6715 | weighted f1-score: 0.6776
+The epoch: 29 | phase: test | loss: 1.4138 | accuracy: 0.7023 | mean f1-score: 0.6979 | weighted f1-score: 0.6937
+Epoch 29 completed in 0m 4s
+Epoch 30/149
+----------
+The epoch: 30 | phase: train | loss: 0.0695 | accuracy: 0.9781 | mean f1-score: 0.9779 | weighted f1-score: 0.9781
+The epoch: 30 | phase: val | loss: 1.5145 | accuracy: 0.6620 | mean f1-score: 0.6412 | weighted f1-score: 0.6445
+The epoch: 30 | phase: test | loss: 1.6005 | accuracy: 0.6570 | mean f1-score: 0.6420 | weighted f1-score: 0.6349
+Epoch 30 completed in 0m 4s
+Epoch 31/149
+----------
+The epoch: 31 | phase: train | loss: 0.0660 | accuracy: 0.9791 | mean f1-score: 0.9788 | weighted f1-score: 0.9791
+The epoch: 31 | phase: val | loss: 1.4180 | accuracy: 0.6813 | mean f1-score: 0.6548 | weighted f1-score: 0.6617
+The epoch: 31 | phase: test | loss: 1.6118 | accuracy: 0.6965 | mean f1-score: 0.6901 | weighted f1-score: 0.6851
+Epoch 31 completed in 0m 5s
+Epoch 32/149
+----------
+The epoch: 32 | phase: train | loss: 0.0637 | accuracy: 0.9800 | mean f1-score: 0.9797 | weighted f1-score: 0.9799
+The epoch: 32 | phase: val | loss: 1.3360 | accuracy: 0.6670 | mean f1-score: 0.6599 | weighted f1-score: 0.6625
+The epoch: 32 | phase: test | loss: 1.7416 | accuracy: 0.6918 | mean f1-score: 0.6815 | weighted f1-score: 0.6761
+Epoch 32 completed in 0m 4s
+Epoch 33/149
+----------
+The epoch: 33 | phase: train | loss: 0.0634 | accuracy: 0.9802 | mean f1-score: 0.9800 | weighted f1-score: 0.9802
+The epoch: 33 | phase: val | loss: 1.4045 | accuracy: 0.6556 | mean f1-score: 0.6252 | weighted f1-score: 0.6300
+The epoch: 33 | phase: test | loss: 1.4612 | accuracy: 0.6989 | mean f1-score: 0.6982 | weighted f1-score: 0.6937
+Epoch 33 completed in 0m 4s
+Epoch 34/149
+----------
+The epoch: 34 | phase: train | loss: 0.0595 | accuracy: 0.9812 | mean f1-score: 0.9810 | weighted f1-score: 0.9812
+The epoch: 34 | phase: val | loss: 1.8050 | accuracy: 0.6716 | mean f1-score: 0.6478 | weighted f1-score: 0.6530
+The epoch: 34 | phase: test | loss: 1.6548 | accuracy: 0.6694 | mean f1-score: 0.6615 | weighted f1-score: 0.6581
+Epoch 34 completed in 0m 4s
+Epoch 35/149
+----------
+The epoch: 35 | phase: train | loss: 0.0591 | accuracy: 0.9811 | mean f1-score: 0.9809 | weighted f1-score: 0.9811
+The epoch: 35 | phase: val | loss: 1.7993 | accuracy: 0.6786 | mean f1-score: 0.6548 | weighted f1-score: 0.6613
+The epoch: 35 | phase: test | loss: 1.9359 | accuracy: 0.6359 | mean f1-score: 0.6015 | weighted f1-score: 0.5956
+Epoch 35 completed in 0m 4s
+Epoch 36/149
+----------
+The epoch: 36 | phase: train | loss: 0.0569 | accuracy: 0.9819 | mean f1-score: 0.9817 | weighted f1-score: 0.9819
+The epoch: 36 | phase: val | loss: 1.9354 | accuracy: 0.6286 | mean f1-score: 0.6064 | weighted f1-score: 0.6112
+The epoch: 36 | phase: test | loss: 1.8204 | accuracy: 0.6418 | mean f1-score: 0.6322 | weighted f1-score: 0.6253
+Epoch 36 completed in 0m 4s
+Epoch 37/149
+----------
+The epoch: 37 | phase: train | loss: 0.0539 | accuracy: 0.9825 | mean f1-score: 0.9824 | weighted f1-score: 0.9825
+The epoch: 37 | phase: val | loss: 1.6695 | accuracy: 0.7114 | mean f1-score: 0.6979 | weighted f1-score: 0.7024
+The epoch: 37 | phase: test | loss: 1.7454 | accuracy: 0.6740 | mean f1-score: 0.6615 | weighted f1-score: 0.6568
+Epoch 37 completed in 0m 4s
+Epoch 38/149
+----------
+The epoch: 38 | phase: train | loss: 0.0548 | accuracy: 0.9821 | mean f1-score: 0.9819 | weighted f1-score: 0.9821
+The epoch: 38 | phase: val | loss: 1.6478 | accuracy: 0.6752 | mean f1-score: 0.6445 | weighted f1-score: 0.6501
+The epoch: 38 | phase: test | loss: 1.6325 | accuracy: 0.6689 | mean f1-score: 0.6585 | weighted f1-score: 0.6533
+Epoch 38 completed in 0m 4s
+Epoch 39/149
+----------
+The epoch: 39 | phase: train | loss: 0.0532 | accuracy: 0.9829 | mean f1-score: 0.9827 | weighted f1-score: 0.9829
+The epoch: 39 | phase: val | loss: 1.4016 | accuracy: 0.7094 | mean f1-score: 0.7031 | weighted f1-score: 0.7048
+The epoch: 39 | phase: test | loss: 1.7687 | accuracy: 0.6921 | mean f1-score: 0.6784 | weighted f1-score: 0.6736
+Epoch 39 completed in 0m 3s
+Epoch 40/149
+----------
+The epoch: 40 | phase: train | loss: 0.0516 | accuracy: 0.9834 | mean f1-score: 0.9833 | weighted f1-score: 0.9834
+The epoch: 40 | phase: val | loss: 1.6769 | accuracy: 0.6361 | mean f1-score: 0.6197 | weighted f1-score: 0.6240
+The epoch: 40 | phase: test | loss: 1.6173 | accuracy: 0.6682 | mean f1-score: 0.6528 | weighted f1-score: 0.6480
+Epoch 40 completed in 0m 3s
+Epoch 41/149
+----------
+The epoch: 41 | phase: train | loss: 0.0512 | accuracy: 0.9831 | mean f1-score: 0.9829 | weighted f1-score: 0.9831
+The epoch: 41 | phase: val | loss: 1.8662 | accuracy: 0.6214 | mean f1-score: 0.6112 | weighted f1-score: 0.6144
+The epoch: 41 | phase: test | loss: 1.6750 | accuracy: 0.6921 | mean f1-score: 0.6820 | weighted f1-score: 0.6776
+Epoch 41 completed in 0m 4s
+Epoch 42/149
+----------
+The epoch: 42 | phase: train | loss: 0.0487 | accuracy: 0.9836 | mean f1-score: 0.9833 | weighted f1-score: 0.9836
+The epoch: 42 | phase: val | loss: 1.7257 | accuracy: 0.6441 | mean f1-score: 0.6321 | weighted f1-score: 0.6342
+The epoch: 42 | phase: test | loss: 1.5978 | accuracy: 0.6826 | mean f1-score: 0.6791 | weighted f1-score: 0.6752
+Epoch 42 completed in 0m 3s
+Epoch 43/149
+----------
+The epoch: 43 | phase: train | loss: 0.0474 | accuracy: 0.9841 | mean f1-score: 0.9840 | weighted f1-score: 0.9841
+The epoch: 43 | phase: val | loss: 1.6596 | accuracy: 0.6540 | mean f1-score: 0.6301 | weighted f1-score: 0.6358
+The epoch: 43 | phase: test | loss: 1.5401 | accuracy: 0.7053 | mean f1-score: 0.7021 | weighted f1-score: 0.6970
+Epoch 43 completed in 0m 4s
+Epoch 44/149
+----------
+The epoch: 44 | phase: train | loss: 0.0426 | accuracy: 0.9855 | mean f1-score: 0.9854 | weighted f1-score: 0.9855
+The epoch: 44 | phase: val | loss: 1.8771 | accuracy: 0.6490 | mean f1-score: 0.6146 | weighted f1-score: 0.6223
+The epoch: 44 | phase: test | loss: 1.9289 | accuracy: 0.6654 | mean f1-score: 0.6565 | weighted f1-score: 0.6501
+Epoch 44 completed in 0m 3s
+Epoch 45/149
+----------
+The epoch: 45 | phase: train | loss: 0.0432 | accuracy: 0.9858 | mean f1-score: 0.9857 | weighted f1-score: 0.9858
+The epoch: 45 | phase: val | loss: 1.5530 | accuracy: 0.6824 | mean f1-score: 0.6751 | weighted f1-score: 0.6784
+The epoch: 45 | phase: test | loss: 1.7081 | accuracy: 0.7099 | mean f1-score: 0.7017 | weighted f1-score: 0.6969
+Epoch 45 completed in 0m 3s
+Epoch 46/149
+----------
+The epoch: 46 | phase: train | loss: 0.0407 | accuracy: 0.9863 | mean f1-score: 0.9860 | weighted f1-score: 0.9863
+The epoch: 46 | phase: val | loss: 1.8824 | accuracy: 0.6493 | mean f1-score: 0.6298 | weighted f1-score: 0.6338
+The epoch: 46 | phase: test | loss: 1.9643 | accuracy: 0.6732 | mean f1-score: 0.6649 | weighted f1-score: 0.6602
+Epoch 46 completed in 0m 3s
+Epoch 47/149
+----------
+The epoch: 47 | phase: train | loss: 0.0414 | accuracy: 0.9857 | mean f1-score: 0.9855 | weighted f1-score: 0.9857
+The epoch: 47 | phase: val | loss: 2.1170 | accuracy: 0.6209 | mean f1-score: 0.5862 | weighted f1-score: 0.5932
+The epoch: 47 | phase: test | loss: 2.0386 | accuracy: 0.6781 | mean f1-score: 0.6736 | weighted f1-score: 0.6693
+Epoch 47 completed in 0m 4s
+Epoch 48/149
+----------
+The epoch: 48 | phase: train | loss: 0.0414 | accuracy: 0.9864 | mean f1-score: 0.9862 | weighted f1-score: 0.9864
+The epoch: 48 | phase: val | loss: 1.7466 | accuracy: 0.6695 | mean f1-score: 0.6546 | weighted f1-score: 0.6583
+The epoch: 48 | phase: test | loss: 1.7100 | accuracy: 0.6976 | mean f1-score: 0.6906 | weighted f1-score: 0.6863
+Epoch 48 completed in 0m 4s
+Epoch 49/149
+----------
+The epoch: 49 | phase: train | loss: 0.0390 | accuracy: 0.9873 | mean f1-score: 0.9871 | weighted f1-score: 0.9873
+The epoch: 49 | phase: val | loss: 1.5784 | accuracy: 0.6779 | mean f1-score: 0.6623 | weighted f1-score: 0.6662
+The epoch: 49 | phase: test | loss: 1.8891 | accuracy: 0.6830 | mean f1-score: 0.6782 | weighted f1-score: 0.6742
+Epoch 49 completed in 0m 4s
+Epoch 50/149
+----------
+The epoch: 50 | phase: train | loss: 0.0362 | accuracy: 0.9879 | mean f1-score: 0.9878 | weighted f1-score: 0.9879
+The epoch: 50 | phase: val | loss: 2.1620 | accuracy: 0.6347 | mean f1-score: 0.6191 | weighted f1-score: 0.6244
+The epoch: 50 | phase: test | loss: 1.9532 | accuracy: 0.6568 | mean f1-score: 0.6441 | weighted f1-score: 0.6389
+Epoch 50 completed in 0m 3s
+Epoch 51/149
+----------
+The epoch: 51 | phase: train | loss: 0.0319 | accuracy: 0.9894 | mean f1-score: 0.9891 | weighted f1-score: 0.9894
+The epoch: 51 | phase: val | loss: 1.7225 | accuracy: 0.6865 | mean f1-score: 0.6728 | weighted f1-score: 0.6765
+The epoch: 51 | phase: test | loss: 1.7780 | accuracy: 0.7061 | mean f1-score: 0.7008 | weighted f1-score: 0.6963
+Epoch 51 completed in 0m 4s
+Epoch 52/149
+----------
+The epoch: 52 | phase: train | loss: 0.0328 | accuracy: 0.9887 | mean f1-score: 0.9886 | weighted f1-score: 0.9887
+The epoch: 52 | phase: val | loss: 2.0011 | accuracy: 0.6138 | mean f1-score: 0.5909 | weighted f1-score: 0.5965
+The epoch: 52 | phase: test | loss: 1.9257 | accuracy: 0.6805 | mean f1-score: 0.6682 | weighted f1-score: 0.6633
+Epoch 52 completed in 0m 5s
+Epoch 53/149
+----------
+The epoch: 53 | phase: train | loss: 0.0357 | accuracy: 0.9883 | mean f1-score: 0.9882 | weighted f1-score: 0.9883
+The epoch: 53 | phase: val | loss: 2.1241 | accuracy: 0.6247 | mean f1-score: 0.6072 | weighted f1-score: 0.6125
+The epoch: 53 | phase: test | loss: 1.6975 | accuracy: 0.6649 | mean f1-score: 0.6542 | weighted f1-score: 0.6501
+Epoch 53 completed in 0m 3s
+Epoch 54/149
+----------
+The epoch: 54 | phase: train | loss: 0.0322 | accuracy: 0.9892 | mean f1-score: 0.9891 | weighted f1-score: 0.9892
+The epoch: 54 | phase: val | loss: 1.7445 | accuracy: 0.6366 | mean f1-score: 0.6276 | weighted f1-score: 0.6317
+The epoch: 54 | phase: test | loss: 1.6880 | accuracy: 0.6888 | mean f1-score: 0.6815 | weighted f1-score: 0.6772
+Epoch 54 completed in 0m 3s
+Epoch 55/149
+----------
+The epoch: 55 | phase: train | loss: 0.0290 | accuracy: 0.9901 | mean f1-score: 0.9899 | weighted f1-score: 0.9901
+The epoch: 55 | phase: val | loss: 1.7195 | accuracy: 0.6490 | mean f1-score: 0.6352 | weighted f1-score: 0.6393
+The epoch: 55 | phase: test | loss: 1.9547 | accuracy: 0.6746 | mean f1-score: 0.6670 | weighted f1-score: 0.6641
+Epoch 55 completed in 0m 3s
+Epoch 56/149
+----------
+The epoch: 56 | phase: train | loss: 0.0319 | accuracy: 0.9896 | mean f1-score: 0.9895 | weighted f1-score: 0.9896
+The epoch: 56 | phase: val | loss: 2.9627 | accuracy: 0.5870 | mean f1-score: 0.5560 | weighted f1-score: 0.5587
+The epoch: 56 | phase: test | loss: 2.1960 | accuracy: 0.6842 | mean f1-score: 0.6702 | weighted f1-score: 0.6667
+Epoch 56 completed in 0m 3s
+Epoch 57/149
+----------
+The epoch: 57 | phase: train | loss: 0.0281 | accuracy: 0.9902 | mean f1-score: 0.9900 | weighted f1-score: 0.9902
+The epoch: 57 | phase: val | loss: 1.9281 | accuracy: 0.6526 | mean f1-score: 0.6444 | weighted f1-score: 0.6470
+The epoch: 57 | phase: test | loss: 1.9777 | accuracy: 0.6989 | mean f1-score: 0.6883 | weighted f1-score: 0.6848
+Epoch 57 completed in 0m 4s
+Epoch 58/149
+----------
+The epoch: 58 | phase: train | loss: 0.0287 | accuracy: 0.9905 | mean f1-score: 0.9903 | weighted f1-score: 0.9905
+The epoch: 58 | phase: val | loss: 1.8878 | accuracy: 0.6432 | mean f1-score: 0.6331 | weighted f1-score: 0.6381
+The epoch: 58 | phase: test | loss: 1.8705 | accuracy: 0.6578 | mean f1-score: 0.6465 | weighted f1-score: 0.6439
+Epoch 58 completed in 0m 3s
+Epoch 59/149
+----------
+The epoch: 59 | phase: train | loss: 0.0265 | accuracy: 0.9907 | mean f1-score: 0.9906 | weighted f1-score: 0.9907
+The epoch: 59 | phase: val | loss: 2.6140 | accuracy: 0.6115 | mean f1-score: 0.5968 | weighted f1-score: 0.5986
+The epoch: 59 | phase: test | loss: 2.0095 | accuracy: 0.6661 | mean f1-score: 0.6543 | weighted f1-score: 0.6513
+Epoch 59 completed in 0m 3s
+Epoch 60/149
+----------
+The epoch: 60 | phase: train | loss: 0.0295 | accuracy: 0.9896 | mean f1-score: 0.9894 | weighted f1-score: 0.9896
+The epoch: 60 | phase: val | loss: 1.9340 | accuracy: 0.6526 | mean f1-score: 0.6376 | weighted f1-score: 0.6424
+The epoch: 60 | phase: test | loss: 2.3698 | accuracy: 0.6473 | mean f1-score: 0.6312 | weighted f1-score: 0.6274
+Epoch 60 completed in 0m 3s
+Epoch 61/149
+----------
+The epoch: 61 | phase: train | loss: 0.0247 | accuracy: 0.9912 | mean f1-score: 0.9911 | weighted f1-score: 0.9912
+The epoch: 61 | phase: val | loss: 1.9232 | accuracy: 0.6480 | mean f1-score: 0.6378 | weighted f1-score: 0.6408
+The epoch: 61 | phase: test | loss: 1.6377 | accuracy: 0.7056 | mean f1-score: 0.6996 | weighted f1-score: 0.6968
+Epoch 61 completed in 0m 3s
+Epoch 62/149
+----------
+The epoch: 62 | phase: train | loss: 0.0256 | accuracy: 0.9915 | mean f1-score: 0.9913 | weighted f1-score: 0.9915
+The epoch: 62 | phase: val | loss: 2.3902 | accuracy: 0.6218 | mean f1-score: 0.6046 | weighted f1-score: 0.6083
+The epoch: 62 | phase: test | loss: 1.8427 | accuracy: 0.6874 | mean f1-score: 0.6804 | weighted f1-score: 0.6766
+Epoch 62 completed in 0m 3s
+Epoch 63/149
+----------
+The epoch: 63 | phase: train | loss: 0.0211 | accuracy: 0.9925 | mean f1-score: 0.9924 | weighted f1-score: 0.9925
+The epoch: 63 | phase: val | loss: 2.0479 | accuracy: 0.6550 | mean f1-score: 0.6440 | weighted f1-score: 0.6506
+The epoch: 63 | phase: test | loss: 2.2446 | accuracy: 0.6595 | mean f1-score: 0.6408 | weighted f1-score: 0.6367
+Epoch 63 completed in 0m 3s
+Epoch 64/149
+----------
+The epoch: 64 | phase: train | loss: 0.0227 | accuracy: 0.9923 | mean f1-score: 0.9921 | weighted f1-score: 0.9923
+The epoch: 64 | phase: val | loss: 2.5936 | accuracy: 0.6094 | mean f1-score: 0.5895 | weighted f1-score: 0.5915
+The epoch: 64 | phase: test | loss: 1.7796 | accuracy: 0.6864 | mean f1-score: 0.6765 | weighted f1-score: 0.6732
+Epoch 64 completed in 0m 3s
+Epoch 65/149
+----------
+The epoch: 65 | phase: train | loss: 0.0214 | accuracy: 0.9927 | mean f1-score: 0.9926 | weighted f1-score: 0.9927
+The epoch: 65 | phase: val | loss: 2.7099 | accuracy: 0.5810 | mean f1-score: 0.5542 | weighted f1-score: 0.5560
+The epoch: 65 | phase: test | loss: 1.9955 | accuracy: 0.6607 | mean f1-score: 0.6454 | weighted f1-score: 0.6399
+Epoch 65 completed in 0m 3s
+Epoch 66/149
+----------
+The epoch: 66 | phase: train | loss: 0.0224 | accuracy: 0.9926 | mean f1-score: 0.9924 | weighted f1-score: 0.9926
+The epoch: 66 | phase: val | loss: 1.8630 | accuracy: 0.6647 | mean f1-score: 0.6587 | weighted f1-score: 0.6635
+The epoch: 66 | phase: test | loss: 1.9509 | accuracy: 0.7099 | mean f1-score: 0.7007 | weighted f1-score: 0.6967
+Epoch 66 completed in 0m 3s
+Epoch 67/149
+----------
+The epoch: 67 | phase: train | loss: 0.0198 | accuracy: 0.9934 | mean f1-score: 0.9933 | weighted f1-score: 0.9934
+The epoch: 67 | phase: val | loss: 1.6851 | accuracy: 0.7044 | mean f1-score: 0.6995 | weighted f1-score: 0.7020
+The epoch: 67 | phase: test | loss: 2.0452 | accuracy: 0.6858 | mean f1-score: 0.6752 | weighted f1-score: 0.6714
+Epoch 67 completed in 0m 3s
+Epoch 68/149
+----------
+The epoch: 68 | phase: train | loss: 0.0227 | accuracy: 0.9925 | mean f1-score: 0.9923 | weighted f1-score: 0.9925
+The epoch: 68 | phase: val | loss: 2.1374 | accuracy: 0.6446 | mean f1-score: 0.6357 | weighted f1-score: 0.6377
+The epoch: 68 | phase: test | loss: 2.0060 | accuracy: 0.6609 | mean f1-score: 0.6484 | weighted f1-score: 0.6445
+Epoch 68 completed in 0m 3s
+Epoch 69/149
+----------
+The epoch: 69 | phase: train | loss: 0.0223 | accuracy: 0.9921 | mean f1-score: 0.9919 | weighted f1-score: 0.9921
+The epoch: 69 | phase: val | loss: 2.0039 | accuracy: 0.6510 | mean f1-score: 0.6427 | weighted f1-score: 0.6476
+The epoch: 69 | phase: test | loss: 1.9232 | accuracy: 0.6782 | mean f1-score: 0.6616 | weighted f1-score: 0.6583
+Epoch 69 completed in 0m 3s
+Epoch 70/149
+----------
+The epoch: 70 | phase: train | loss: 0.0211 | accuracy: 0.9928 | mean f1-score: 0.9927 | weighted f1-score: 0.9928
+The epoch: 70 | phase: val | loss: 1.8719 | accuracy: 0.6415 | mean f1-score: 0.6334 | weighted f1-score: 0.6384
+The epoch: 70 | phase: test | loss: 2.0812 | accuracy: 0.6591 | mean f1-score: 0.6467 | weighted f1-score: 0.6429
+Epoch 70 completed in 0m 3s
+Epoch 71/149
+----------
+The epoch: 71 | phase: train | loss: 0.0172 | accuracy: 0.9942 | mean f1-score: 0.9941 | weighted f1-score: 0.9942
+The epoch: 71 | phase: val | loss: 2.0861 | accuracy: 0.6418 | mean f1-score: 0.6333 | weighted f1-score: 0.6365
+The epoch: 71 | phase: test | loss: 2.0635 | accuracy: 0.6863 | mean f1-score: 0.6666 | weighted f1-score: 0.6654
+Epoch 71 completed in 0m 3s
+Epoch 72/149
+----------
+The epoch: 72 | phase: train | loss: 0.0188 | accuracy: 0.9939 | mean f1-score: 0.9937 | weighted f1-score: 0.9939
+The epoch: 72 | phase: val | loss: 1.8494 | accuracy: 0.6669 | mean f1-score: 0.6604 | weighted f1-score: 0.6650
+The epoch: 72 | phase: test | loss: 1.8430 | accuracy: 0.6912 | mean f1-score: 0.6780 | weighted f1-score: 0.6748
+Epoch 72 completed in 0m 3s
+Epoch 73/149
+----------
+The epoch: 73 | phase: train | loss: 0.0153 | accuracy: 0.9953 | mean f1-score: 0.9951 | weighted f1-score: 0.9953
+The epoch: 73 | phase: val | loss: 2.2585 | accuracy: 0.6189 | mean f1-score: 0.6003 | weighted f1-score: 0.6050
+The epoch: 73 | phase: test | loss: 2.4977 | accuracy: 0.6468 | mean f1-score: 0.6358 | weighted f1-score: 0.6315
+Epoch 73 completed in 0m 3s
+Epoch 74/149
+----------
+The epoch: 74 | phase: train | loss: 0.0175 | accuracy: 0.9938 | mean f1-score: 0.9937 | weighted f1-score: 0.9938
+The epoch: 74 | phase: val | loss: 2.3020 | accuracy: 0.6212 | mean f1-score: 0.6065 | weighted f1-score: 0.6093
+The epoch: 74 | phase: test | loss: 2.2746 | accuracy: 0.6813 | mean f1-score: 0.6698 | weighted f1-score: 0.6660
+Epoch 74 completed in 0m 3s
+Epoch 75/149
+----------
+The epoch: 75 | phase: train | loss: 0.0154 | accuracy: 0.9949 | mean f1-score: 0.9948 | weighted f1-score: 0.9949
+The epoch: 75 | phase: val | loss: 2.4677 | accuracy: 0.5895 | mean f1-score: 0.5661 | weighted f1-score: 0.5704
+The epoch: 75 | phase: test | loss: 2.1175 | accuracy: 0.6642 | mean f1-score: 0.6501 | weighted f1-score: 0.6459
+Epoch 75 completed in 0m 3s
+Epoch 76/149
+----------
+The epoch: 76 | phase: train | loss: 0.0153 | accuracy: 0.9946 | mean f1-score: 0.9946 | weighted f1-score: 0.9946
+The epoch: 76 | phase: val | loss: 2.2996 | accuracy: 0.6038 | mean f1-score: 0.5861 | weighted f1-score: 0.5914
+The epoch: 76 | phase: test | loss: 2.3466 | accuracy: 0.6893 | mean f1-score: 0.6806 | weighted f1-score: 0.6765
+Epoch 76 completed in 0m 3s
+Epoch 77/149
+----------
+The epoch: 77 | phase: train | loss: 0.0130 | accuracy: 0.9954 | mean f1-score: 0.9953 | weighted f1-score: 0.9954
+The epoch: 77 | phase: val | loss: 2.9846 | accuracy: 0.5839 | mean f1-score: 0.5481 | weighted f1-score: 0.5525
+The epoch: 77 | phase: test | loss: 2.5929 | accuracy: 0.6717 | mean f1-score: 0.6573 | weighted f1-score: 0.6534
+Epoch 77 completed in 0m 3s
+Epoch 78/149
+----------
+The epoch: 78 | phase: train | loss: 0.0139 | accuracy: 0.9954 | mean f1-score: 0.9953 | weighted f1-score: 0.9954
+The epoch: 78 | phase: val | loss: 2.9430 | accuracy: 0.5790 | mean f1-score: 0.5479 | weighted f1-score: 0.5516
+The epoch: 78 | phase: test | loss: 2.4360 | accuracy: 0.6651 | mean f1-score: 0.6531 | weighted f1-score: 0.6486
+Epoch 78 completed in 0m 3s
+Epoch 79/149
+----------
+The epoch: 79 | phase: train | loss: 0.0155 | accuracy: 0.9950 | mean f1-score: 0.9949 | weighted f1-score: 0.9950
+The epoch: 79 | phase: val | loss: 2.0066 | accuracy: 0.6945 | mean f1-score: 0.6865 | weighted f1-score: 0.6915
+The epoch: 79 | phase: test | loss: 2.3810 | accuracy: 0.6653 | mean f1-score: 0.6486 | weighted f1-score: 0.6428
+Epoch 79 completed in 0m 3s
+Epoch 80/149
+----------
+The epoch: 80 | phase: train | loss: 0.0147 | accuracy: 0.9951 | mean f1-score: 0.9950 | weighted f1-score: 0.9951
+The epoch: 80 | phase: val | loss: 3.3996 | accuracy: 0.5862 | mean f1-score: 0.5547 | weighted f1-score: 0.5592
+The epoch: 80 | phase: test | loss: 2.6274 | accuracy: 0.6563 | mean f1-score: 0.6408 | weighted f1-score: 0.6360
+Epoch 80 completed in 0m 2s
+Epoch 81/149
+----------
+The epoch: 81 | phase: train | loss: 0.0129 | accuracy: 0.9962 | mean f1-score: 0.9962 | weighted f1-score: 0.9962
+The epoch: 81 | phase: val | loss: 3.0931 | accuracy: 0.5903 | mean f1-score: 0.5647 | weighted f1-score: 0.5676
+The epoch: 81 | phase: test | loss: 2.3436 | accuracy: 0.6768 | mean f1-score: 0.6646 | weighted f1-score: 0.6609
+Epoch 81 completed in 0m 3s
+Epoch 82/149
+----------
+The epoch: 82 | phase: train | loss: 0.0113 | accuracy: 0.9965 | mean f1-score: 0.9965 | weighted f1-score: 0.9965
+The epoch: 82 | phase: val | loss: 3.1656 | accuracy: 0.6146 | mean f1-score: 0.5895 | weighted f1-score: 0.5909
+The epoch: 82 | phase: test | loss: 2.1279 | accuracy: 0.6947 | mean f1-score: 0.6857 | weighted f1-score: 0.6825
+Epoch 82 completed in 0m 3s
+Epoch 83/149
+----------
+The epoch: 83 | phase: train | loss: 0.0144 | accuracy: 0.9951 | mean f1-score: 0.9950 | weighted f1-score: 0.9951
+The epoch: 83 | phase: val | loss: 2.6704 | accuracy: 0.6118 | mean f1-score: 0.5887 | weighted f1-score: 0.5919
+The epoch: 83 | phase: test | loss: 2.5037 | accuracy: 0.6634 | mean f1-score: 0.6523 | weighted f1-score: 0.6481
+Epoch 83 completed in 0m 4s
+Epoch 84/149
+----------
+The epoch: 84 | phase: train | loss: 0.0128 | accuracy: 0.9957 | mean f1-score: 0.9956 | weighted f1-score: 0.9957
+The epoch: 84 | phase: val | loss: 2.7486 | accuracy: 0.6124 | mean f1-score: 0.5945 | weighted f1-score: 0.5962
+The epoch: 84 | phase: test | loss: 2.3583 | accuracy: 0.6679 | mean f1-score: 0.6575 | weighted f1-score: 0.6531
+Epoch 84 completed in 0m 4s
+Epoch 85/149
+----------
+The epoch: 85 | phase: train | loss: 0.0126 | accuracy: 0.9959 | mean f1-score: 0.9958 | weighted f1-score: 0.9959
+The epoch: 85 | phase: val | loss: 2.6788 | accuracy: 0.6129 | mean f1-score: 0.5942 | weighted f1-score: 0.5976
+The epoch: 85 | phase: test | loss: 2.6293 | accuracy: 0.6562 | mean f1-score: 0.6409 | weighted f1-score: 0.6366
+Epoch 85 completed in 0m 3s
+Epoch 86/149
+----------
+The epoch: 86 | phase: train | loss: 0.0122 | accuracy: 0.9960 | mean f1-score: 0.9959 | weighted f1-score: 0.9960
+The epoch: 86 | phase: val | loss: 2.9098 | accuracy: 0.6090 | mean f1-score: 0.5894 | weighted f1-score: 0.5897
+The epoch: 86 | phase: test | loss: 2.2832 | accuracy: 0.6645 | mean f1-score: 0.6379 | weighted f1-score: 0.6326
+Epoch 86 completed in 0m 3s
+Epoch 87/149
+----------
+The epoch: 87 | phase: train | loss: 0.0125 | accuracy: 0.9960 | mean f1-score: 0.9959 | weighted f1-score: 0.9960
+The epoch: 87 | phase: val | loss: 2.2028 | accuracy: 0.6335 | mean f1-score: 0.6237 | weighted f1-score: 0.6288
+The epoch: 87 | phase: test | loss: 2.5200 | accuracy: 0.6468 | mean f1-score: 0.6296 | weighted f1-score: 0.6249
+Epoch 87 completed in 0m 4s
+Epoch 88/149
+----------
+The epoch: 88 | phase: train | loss: 0.0098 | accuracy: 0.9971 | mean f1-score: 0.9970 | weighted f1-score: 0.9971
+The epoch: 88 | phase: val | loss: 2.5606 | accuracy: 0.6112 | mean f1-score: 0.5907 | weighted f1-score: 0.5939
+The epoch: 88 | phase: test | loss: 2.3482 | accuracy: 0.6588 | mean f1-score: 0.6386 | weighted f1-score: 0.6327
+Epoch 88 completed in 0m 4s
+Epoch 89/149
+----------
+The epoch: 89 | phase: train | loss: 0.0115 | accuracy: 0.9964 | mean f1-score: 0.9964 | weighted f1-score: 0.9964
+The epoch: 89 | phase: val | loss: 3.1165 | accuracy: 0.5922 | mean f1-score: 0.5708 | weighted f1-score: 0.5745
+The epoch: 89 | phase: test | loss: 2.6241 | accuracy: 0.6602 | mean f1-score: 0.6366 | weighted f1-score: 0.6310
+Epoch 89 completed in 0m 3s
+Epoch 90/149
+----------
+The epoch: 90 | phase: train | loss: 0.0103 | accuracy: 0.9964 | mean f1-score: 0.9963 | weighted f1-score: 0.9964
+The epoch: 90 | phase: val | loss: 3.0794 | accuracy: 0.5920 | mean f1-score: 0.5714 | weighted f1-score: 0.5732
+The epoch: 90 | phase: test | loss: 2.6378 | accuracy: 0.6601 | mean f1-score: 0.6406 | weighted f1-score: 0.6352
+Epoch 90 completed in 0m 3s
+Epoch 91/149
+----------
+The epoch: 91 | phase: train | loss: 0.0136 | accuracy: 0.9955 | mean f1-score: 0.9955 | weighted f1-score: 0.9955
+The epoch: 91 | phase: val | loss: 2.7556 | accuracy: 0.6013 | mean f1-score: 0.5770 | weighted f1-score: 0.5805
+The epoch: 91 | phase: test | loss: 2.4260 | accuracy: 0.6841 | mean f1-score: 0.6741 | weighted f1-score: 0.6706
+Epoch 91 completed in 0m 3s
+Epoch 92/149
+----------
+The epoch: 92 | phase: train | loss: 0.0106 | accuracy: 0.9966 | mean f1-score: 0.9966 | weighted f1-score: 0.9966
+The epoch: 92 | phase: val | loss: 3.0113 | accuracy: 0.6046 | mean f1-score: 0.5809 | weighted f1-score: 0.5835
+The epoch: 92 | phase: test | loss: 2.6532 | accuracy: 0.6407 | mean f1-score: 0.6184 | weighted f1-score: 0.6126
+Epoch 92 completed in 0m 3s
+Epoch 93/149
+----------
+The epoch: 93 | phase: train | loss: 0.0090 | accuracy: 0.9969 | mean f1-score: 0.9968 | weighted f1-score: 0.9969
+The epoch: 93 | phase: val | loss: 2.7006 | accuracy: 0.6055 | mean f1-score: 0.5828 | weighted f1-score: 0.5878
+The epoch: 93 | phase: test | loss: 2.6603 | accuracy: 0.6464 | mean f1-score: 0.6271 | weighted f1-score: 0.6224
+Epoch 93 completed in 0m 3s
+Epoch 94/149
+----------
+The epoch: 94 | phase: train | loss: 0.0114 | accuracy: 0.9962 | mean f1-score: 0.9962 | weighted f1-score: 0.9962
+The epoch: 94 | phase: val | loss: 2.5226 | accuracy: 0.6110 | mean f1-score: 0.5875 | weighted f1-score: 0.5920
+The epoch: 94 | phase: test | loss: 2.4387 | accuracy: 0.6719 | mean f1-score: 0.6630 | weighted f1-score: 0.6594
+Epoch 94 completed in 0m 3s
+Epoch 95/149
+----------
+The epoch: 95 | phase: train | loss: 0.0081 | accuracy: 0.9975 | mean f1-score: 0.9974 | weighted f1-score: 0.9975
+The epoch: 95 | phase: val | loss: 2.8084 | accuracy: 0.6116 | mean f1-score: 0.5913 | weighted f1-score: 0.5933
+The epoch: 95 | phase: test | loss: 2.4918 | accuracy: 0.6642 | mean f1-score: 0.6405 | weighted f1-score: 0.6349
+Epoch 95 completed in 0m 2s
+Epoch 96/149
+----------
+The epoch: 96 | phase: train | loss: 0.0117 | accuracy: 0.9959 | mean f1-score: 0.9959 | weighted f1-score: 0.9959
+The epoch: 96 | phase: val | loss: 2.1452 | accuracy: 0.6306 | mean f1-score: 0.6151 | weighted f1-score: 0.6173
+The epoch: 96 | phase: test | loss: 2.5133 | accuracy: 0.6933 | mean f1-score: 0.6858 | weighted f1-score: 0.6820
+Epoch 96 completed in 0m 3s
+Epoch 97/149
+----------
+The epoch: 97 | phase: train | loss: 0.0091 | accuracy: 0.9969 | mean f1-score: 0.9969 | weighted f1-score: 0.9969
+The epoch: 97 | phase: val | loss: 3.3089 | accuracy: 0.5980 | mean f1-score: 0.5783 | weighted f1-score: 0.5798
+The epoch: 97 | phase: test | loss: 2.6512 | accuracy: 0.6659 | mean f1-score: 0.6510 | weighted f1-score: 0.6469
+Epoch 97 completed in 0m 3s
+Epoch 98/149
+----------
+The epoch: 98 | phase: train | loss: 0.0093 | accuracy: 0.9967 | mean f1-score: 0.9967 | weighted f1-score: 0.9967
+The epoch: 98 | phase: val | loss: 3.1136 | accuracy: 0.5942 | mean f1-score: 0.5666 | weighted f1-score: 0.5685
+The epoch: 98 | phase: test | loss: 2.7027 | accuracy: 0.6494 | mean f1-score: 0.6225 | weighted f1-score: 0.6153
+Epoch 98 completed in 0m 3s
+Epoch 99/149
+----------
+The epoch: 99 | phase: train | loss: 0.0092 | accuracy: 0.9971 | mean f1-score: 0.9970 | weighted f1-score: 0.9971
+The epoch: 99 | phase: val | loss: 2.5365 | accuracy: 0.6076 | mean f1-score: 0.5882 | weighted f1-score: 0.5932
+The epoch: 99 | phase: test | loss: 2.7711 | accuracy: 0.6490 | mean f1-score: 0.6300 | weighted f1-score: 0.6258
+Epoch 99 completed in 0m 2s
+Epoch 100/149
+----------
+The epoch: 100 | phase: train | loss: 0.0089 | accuracy: 0.9974 | mean f1-score: 0.9973 | weighted f1-score: 0.9974
+The epoch: 100 | phase: val | loss: 2.9234 | accuracy: 0.5861 | mean f1-score: 0.5561 | weighted f1-score: 0.5594
+The epoch: 100 | phase: test | loss: 2.7608 | accuracy: 0.6789 | mean f1-score: 0.6702 | weighted f1-score: 0.6659
+Epoch 100 completed in 0m 2s
+Epoch 101/149
+----------
+The epoch: 101 | phase: train | loss: 0.0080 | accuracy: 0.9972 | mean f1-score: 0.9971 | weighted f1-score: 0.9972
+The epoch: 101 | phase: val | loss: 2.5232 | accuracy: 0.6132 | mean f1-score: 0.5884 | weighted f1-score: 0.5914
+The epoch: 101 | phase: test | loss: 2.7746 | accuracy: 0.6634 | mean f1-score: 0.6518 | weighted f1-score: 0.6468
+Epoch 101 completed in 0m 3s
+Epoch 102/149
+----------
+The epoch: 102 | phase: train | loss: 0.0080 | accuracy: 0.9973 | mean f1-score: 0.9973 | weighted f1-score: 0.9973
+The epoch: 102 | phase: val | loss: 3.0622 | accuracy: 0.5956 | mean f1-score: 0.5699 | weighted f1-score: 0.5723
+The epoch: 102 | phase: test | loss: 2.8246 | accuracy: 0.6746 | mean f1-score: 0.6578 | weighted f1-score: 0.6531
+Epoch 102 completed in 0m 2s
+Epoch 103/149
+----------
+The epoch: 103 | phase: train | loss: 0.0084 | accuracy: 0.9975 | mean f1-score: 0.9975 | weighted f1-score: 0.9975
+The epoch: 103 | phase: val | loss: 2.6328 | accuracy: 0.6162 | mean f1-score: 0.5969 | weighted f1-score: 0.6007
+The epoch: 103 | phase: test | loss: 2.6866 | accuracy: 0.6608 | mean f1-score: 0.6439 | weighted f1-score: 0.6390
+Epoch 103 completed in 0m 2s
+Epoch 104/149
+----------
+The epoch: 104 | phase: train | loss: 0.0062 | accuracy: 0.9978 | mean f1-score: 0.9977 | weighted f1-score: 0.9978
+The epoch: 104 | phase: val | loss: 3.2604 | accuracy: 0.6171 | mean f1-score: 0.5907 | weighted f1-score: 0.5921
+The epoch: 104 | phase: test | loss: 2.6741 | accuracy: 0.6745 | mean f1-score: 0.6544 | weighted f1-score: 0.6488
+Epoch 104 completed in 0m 2s
+Epoch 105/149
+----------
+The epoch: 105 | phase: train | loss: 0.0074 | accuracy: 0.9977 | mean f1-score: 0.9977 | weighted f1-score: 0.9977
+The epoch: 105 | phase: val | loss: 2.8645 | accuracy: 0.5934 | mean f1-score: 0.5656 | weighted f1-score: 0.5707
+The epoch: 105 | phase: test | loss: 2.8034 | accuracy: 0.6899 | mean f1-score: 0.6795 | weighted f1-score: 0.6759
+Epoch 105 completed in 0m 2s
+Epoch 106/149
+----------
+The epoch: 106 | phase: train | loss: 0.0072 | accuracy: 0.9977 | mean f1-score: 0.9977 | weighted f1-score: 0.9977
+The epoch: 106 | phase: val | loss: 2.4497 | accuracy: 0.6113 | mean f1-score: 0.5908 | weighted f1-score: 0.5953
+The epoch: 106 | phase: test | loss: 2.8008 | accuracy: 0.6494 | mean f1-score: 0.6287 | weighted f1-score: 0.6225
+Epoch 106 completed in 0m 2s
+Epoch 107/149
+----------
+The epoch: 107 | phase: train | loss: 0.0061 | accuracy: 0.9981 | mean f1-score: 0.9980 | weighted f1-score: 0.9981
+The epoch: 107 | phase: val | loss: 2.9376 | accuracy: 0.6044 | mean f1-score: 0.5804 | weighted f1-score: 0.5843
+The epoch: 107 | phase: test | loss: 2.8958 | accuracy: 0.6708 | mean f1-score: 0.6528 | weighted f1-score: 0.6471
+Epoch 107 completed in 0m 2s
+Epoch 108/149
+----------
+The epoch: 108 | phase: train | loss: 0.0057 | accuracy: 0.9984 | mean f1-score: 0.9984 | weighted f1-score: 0.9984
+The epoch: 108 | phase: val | loss: 2.7808 | accuracy: 0.6008 | mean f1-score: 0.5791 | weighted f1-score: 0.5806
+The epoch: 108 | phase: test | loss: 2.3818 | accuracy: 0.6704 | mean f1-score: 0.6505 | weighted f1-score: 0.6488
+Epoch 108 completed in 0m 3s
+Epoch 109/149
+----------
+The epoch: 109 | phase: train | loss: 0.0077 | accuracy: 0.9976 | mean f1-score: 0.9976 | weighted f1-score: 0.9976
+The epoch: 109 | phase: val | loss: 2.7926 | accuracy: 0.6068 | mean f1-score: 0.5808 | weighted f1-score: 0.5834
+The epoch: 109 | phase: test | loss: 2.5161 | accuracy: 0.6610 | mean f1-score: 0.6389 | weighted f1-score: 0.6332
+Epoch 109 completed in 0m 3s
+Epoch 110/149
+----------
+The epoch: 110 | phase: train | loss: 0.0051 | accuracy: 0.9985 | mean f1-score: 0.9985 | weighted f1-score: 0.9985
+The epoch: 110 | phase: val | loss: 2.8968 | accuracy: 0.6082 | mean f1-score: 0.5849 | weighted f1-score: 0.5879
+The epoch: 110 | phase: test | loss: 2.5111 | accuracy: 0.6689 | mean f1-score: 0.6507 | weighted f1-score: 0.6454
+Epoch 110 completed in 0m 3s
+Epoch 111/149
+----------
+The epoch: 111 | phase: train | loss: 0.0048 | accuracy: 0.9985 | mean f1-score: 0.9985 | weighted f1-score: 0.9985
+The epoch: 111 | phase: val | loss: 2.8162 | accuracy: 0.6054 | mean f1-score: 0.5776 | weighted f1-score: 0.5818
+The epoch: 111 | phase: test | loss: 2.7246 | accuracy: 0.6791 | mean f1-score: 0.6694 | weighted f1-score: 0.6646
+Epoch 111 completed in 0m 3s
+Epoch 112/149
+----------
+The epoch: 112 | phase: train | loss: 0.0065 | accuracy: 0.9980 | mean f1-score: 0.9980 | weighted f1-score: 0.9980
+The epoch: 112 | phase: val | loss: 3.0401 | accuracy: 0.5994 | mean f1-score: 0.5709 | weighted f1-score: 0.5749
+The epoch: 112 | phase: test | loss: 2.5917 | accuracy: 0.6883 | mean f1-score: 0.6788 | weighted f1-score: 0.6753
+Epoch 112 completed in 0m 3s
+Epoch 113/149
+----------
+The epoch: 113 | phase: train | loss: 0.0074 | accuracy: 0.9978 | mean f1-score: 0.9978 | weighted f1-score: 0.9978
+The epoch: 113 | phase: val | loss: 3.1991 | accuracy: 0.5983 | mean f1-score: 0.5701 | weighted f1-score: 0.5729
+The epoch: 113 | phase: test | loss: 2.8058 | accuracy: 0.6666 | mean f1-score: 0.6543 | weighted f1-score: 0.6500
+Epoch 113 completed in 0m 2s
+Epoch 114/149
+----------
+The epoch: 114 | phase: train | loss: 0.0049 | accuracy: 0.9984 | mean f1-score: 0.9983 | weighted f1-score: 0.9984
+The epoch: 114 | phase: val | loss: 3.0426 | accuracy: 0.6187 | mean f1-score: 0.5948 | weighted f1-score: 0.5965
+The epoch: 114 | phase: test | loss: 2.6071 | accuracy: 0.6857 | mean f1-score: 0.6713 | weighted f1-score: 0.6661
+Epoch 114 completed in 0m 3s
+Epoch 115/149
+----------
+The epoch: 115 | phase: train | loss: 0.0067 | accuracy: 0.9979 | mean f1-score: 0.9978 | weighted f1-score: 0.9979
+The epoch: 115 | phase: val | loss: 3.2307 | accuracy: 0.5890 | mean f1-score: 0.5592 | weighted f1-score: 0.5631
+The epoch: 115 | phase: test | loss: 2.7291 | accuracy: 0.6646 | mean f1-score: 0.6537 | weighted f1-score: 0.6497
+Epoch 115 completed in 0m 4s
+Epoch 116/149
+----------
+The epoch: 116 | phase: train | loss: 0.0073 | accuracy: 0.9976 | mean f1-score: 0.9976 | weighted f1-score: 0.9976
+The epoch: 116 | phase: val | loss: 3.0897 | accuracy: 0.6049 | mean f1-score: 0.5760 | weighted f1-score: 0.5804
+The epoch: 116 | phase: test | loss: 2.9100 | accuracy: 0.6334 | mean f1-score: 0.6113 | weighted f1-score: 0.6052
+Epoch 116 completed in 0m 4s
+Epoch 117/149
+----------
+The epoch: 117 | phase: train | loss: 0.0078 | accuracy: 0.9977 | mean f1-score: 0.9977 | weighted f1-score: 0.9977
+The epoch: 117 | phase: val | loss: 3.1122 | accuracy: 0.6079 | mean f1-score: 0.5754 | weighted f1-score: 0.5789
+The epoch: 117 | phase: test | loss: 2.6234 | accuracy: 0.6780 | mean f1-score: 0.6583 | weighted f1-score: 0.6524
+Epoch 117 completed in 0m 3s
+Epoch 118/149
+----------
+The epoch: 118 | phase: train | loss: 0.0062 | accuracy: 0.9980 | mean f1-score: 0.9980 | weighted f1-score: 0.9980
+The epoch: 118 | phase: val | loss: 2.6887 | accuracy: 0.6085 | mean f1-score: 0.5826 | weighted f1-score: 0.5885
+The epoch: 118 | phase: test | loss: 2.7636 | accuracy: 0.6685 | mean f1-score: 0.6513 | weighted f1-score: 0.6455
+Epoch 118 completed in 0m 3s
+Epoch 119/149
+----------
+The epoch: 119 | phase: train | loss: 0.0070 | accuracy: 0.9978 | mean f1-score: 0.9978 | weighted f1-score: 0.9978
+The epoch: 119 | phase: val | loss: 2.8010 | accuracy: 0.6099 | mean f1-score: 0.5890 | weighted f1-score: 0.5918
+The epoch: 119 | phase: test | loss: 2.6989 | accuracy: 0.6520 | mean f1-score: 0.6370 | weighted f1-score: 0.6322
+Epoch 119 completed in 0m 3s
+Epoch 120/149
+----------
+The epoch: 120 | phase: train | loss: 0.0066 | accuracy: 0.9980 | mean f1-score: 0.9979 | weighted f1-score: 0.9980
+The epoch: 120 | phase: val | loss: 3.2426 | accuracy: 0.5999 | mean f1-score: 0.5798 | weighted f1-score: 0.5822
+The epoch: 120 | phase: test | loss: 2.6762 | accuracy: 0.6772 | mean f1-score: 0.6665 | weighted f1-score: 0.6619
+Epoch 120 completed in 0m 3s
+Epoch 121/149
+----------
+The epoch: 121 | phase: train | loss: 0.0045 | accuracy: 0.9984 | mean f1-score: 0.9984 | weighted f1-score: 0.9984
+The epoch: 121 | phase: val | loss: 3.2662 | accuracy: 0.5869 | mean f1-score: 0.5558 | weighted f1-score: 0.5589
+The epoch: 121 | phase: test | loss: 2.6592 | accuracy: 0.6743 | mean f1-score: 0.6689 | weighted f1-score: 0.6641
+Epoch 121 completed in 0m 4s
+Epoch 122/149
+----------
+The epoch: 122 | phase: train | loss: 0.0047 | accuracy: 0.9983 | mean f1-score: 0.9983 | weighted f1-score: 0.9983
+The epoch: 122 | phase: val | loss: 3.3513 | accuracy: 0.5986 | mean f1-score: 0.5722 | weighted f1-score: 0.5745
+The epoch: 122 | phase: test | loss: 2.8170 | accuracy: 0.6886 | mean f1-score: 0.6813 | weighted f1-score: 0.6770
+Epoch 122 completed in 0m 3s
+Epoch 123/149
+----------
+The epoch: 123 | phase: train | loss: 0.0056 | accuracy: 0.9986 | mean f1-score: 0.9986 | weighted f1-score: 0.9986
+The epoch: 123 | phase: val | loss: 2.9880 | accuracy: 0.6109 | mean f1-score: 0.5922 | weighted f1-score: 0.5942
+The epoch: 123 | phase: test | loss: 3.2094 | accuracy: 0.6435 | mean f1-score: 0.6212 | weighted f1-score: 0.6153
+Epoch 123 completed in 0m 3s
+Epoch 124/149
+----------
+The epoch: 124 | phase: train | loss: 0.0052 | accuracy: 0.9986 | mean f1-score: 0.9986 | weighted f1-score: 0.9986
+The epoch: 124 | phase: val | loss: 3.6321 | accuracy: 0.6011 | mean f1-score: 0.5776 | weighted f1-score: 0.5796
+The epoch: 124 | phase: test | loss: 3.0569 | accuracy: 0.6595 | mean f1-score: 0.6447 | weighted f1-score: 0.6386
+Epoch 124 completed in 0m 2s
+Epoch 125/149
+----------
+The epoch: 125 | phase: train | loss: 0.0051 | accuracy: 0.9982 | mean f1-score: 0.9982 | weighted f1-score: 0.9982
+The epoch: 125 | phase: val | loss: 3.0726 | accuracy: 0.6055 | mean f1-score: 0.5874 | weighted f1-score: 0.5896
+The epoch: 125 | phase: test | loss: 2.8795 | accuracy: 0.6789 | mean f1-score: 0.6671 | weighted f1-score: 0.6630
+Epoch 125 completed in 0m 3s
+Epoch 126/149
+----------
+The epoch: 126 | phase: train | loss: 0.0040 | accuracy: 0.9988 | mean f1-score: 0.9988 | weighted f1-score: 0.9988
+The epoch: 126 | phase: val | loss: 3.4559 | accuracy: 0.6025 | mean f1-score: 0.5794 | weighted f1-score: 0.5808
+The epoch: 126 | phase: test | loss: 2.8172 | accuracy: 0.6956 | mean f1-score: 0.6861 | weighted f1-score: 0.6819
+Epoch 126 completed in 0m 4s
+Epoch 127/149
+----------
+The epoch: 127 | phase: train | loss: 0.0040 | accuracy: 0.9988 | mean f1-score: 0.9988 | weighted f1-score: 0.9988
+The epoch: 127 | phase: val | loss: 3.4671 | accuracy: 0.6000 | mean f1-score: 0.5757 | weighted f1-score: 0.5767
+The epoch: 127 | phase: test | loss: 2.7251 | accuracy: 0.6880 | mean f1-score: 0.6779 | weighted f1-score: 0.6735
+Epoch 127 completed in 0m 4s
+Epoch 128/149
+----------
+The epoch: 128 | phase: train | loss: 0.0044 | accuracy: 0.9984 | mean f1-score: 0.9984 | weighted f1-score: 0.9984
+The epoch: 128 | phase: val | loss: 2.9593 | accuracy: 0.6115 | mean f1-score: 0.5919 | weighted f1-score: 0.5931
+The epoch: 128 | phase: test | loss: 2.7453 | accuracy: 0.6787 | mean f1-score: 0.6663 | weighted f1-score: 0.6606
+Epoch 128 completed in 0m 4s
+Epoch 129/149
+----------
+The epoch: 129 | phase: train | loss: 0.0047 | accuracy: 0.9986 | mean f1-score: 0.9986 | weighted f1-score: 0.9986
+The epoch: 129 | phase: val | loss: 3.1023 | accuracy: 0.6096 | mean f1-score: 0.5905 | weighted f1-score: 0.5919
+The epoch: 129 | phase: test | loss: 2.8260 | accuracy: 0.6503 | mean f1-score: 0.6323 | weighted f1-score: 0.6258
+Epoch 129 completed in 0m 4s
+Epoch 130/149
+----------
+The epoch: 130 | phase: train | loss: 0.0064 | accuracy: 0.9977 | mean f1-score: 0.9977 | weighted f1-score: 0.9977
+The epoch: 130 | phase: val | loss: 3.0593 | accuracy: 0.6065 | mean f1-score: 0.5879 | weighted f1-score: 0.5907
+The epoch: 130 | phase: test | loss: 3.0193 | accuracy: 0.6325 | mean f1-score: 0.6116 | weighted f1-score: 0.6053
+Epoch 130 completed in 0m 5s
+Epoch 131/149
+----------
+The epoch: 131 | phase: train | loss: 0.0052 | accuracy: 0.9983 | mean f1-score: 0.9982 | weighted f1-score: 0.9983
+The epoch: 131 | phase: val | loss: 3.2966 | accuracy: 0.5927 | mean f1-score: 0.5690 | weighted f1-score: 0.5726
+The epoch: 131 | phase: test | loss: 2.9281 | accuracy: 0.6562 | mean f1-score: 0.6431 | weighted f1-score: 0.6388
+Epoch 131 completed in 0m 4s
+Epoch 132/149
+----------
+The epoch: 132 | phase: train | loss: 0.0047 | accuracy: 0.9983 | mean f1-score: 0.9983 | weighted f1-score: 0.9983
+The epoch: 132 | phase: val | loss: 4.0037 | accuracy: 0.5927 | mean f1-score: 0.5628 | weighted f1-score: 0.5643
+The epoch: 132 | phase: test | loss: 3.0676 | accuracy: 0.6804 | mean f1-score: 0.6678 | weighted f1-score: 0.6631
+Epoch 132 completed in 0m 4s
+Epoch 133/149
+----------
+The epoch: 133 | phase: train | loss: 0.0043 | accuracy: 0.9987 | mean f1-score: 0.9987 | weighted f1-score: 0.9987
+The epoch: 133 | phase: val | loss: 3.5817 | accuracy: 0.6055 | mean f1-score: 0.5803 | weighted f1-score: 0.5816
+The epoch: 133 | phase: test | loss: 2.9846 | accuracy: 0.6757 | mean f1-score: 0.6637 | weighted f1-score: 0.6589
+Epoch 133 completed in 0m 4s
+Epoch 134/149
+----------
+The epoch: 134 | phase: train | loss: 0.0033 | accuracy: 0.9989 | mean f1-score: 0.9989 | weighted f1-score: 0.9989
+The epoch: 134 | phase: val | loss: 3.2609 | accuracy: 0.6051 | mean f1-score: 0.5832 | weighted f1-score: 0.5842
+The epoch: 134 | phase: test | loss: 2.8756 | accuracy: 0.6769 | mean f1-score: 0.6677 | weighted f1-score: 0.6623
+Epoch 134 completed in 0m 4s
+Epoch 135/149
+----------
+The epoch: 135 | phase: train | loss: 0.0030 | accuracy: 0.9991 | mean f1-score: 0.9991 | weighted f1-score: 0.9991
+The epoch: 135 | phase: val | loss: 3.7708 | accuracy: 0.6052 | mean f1-score: 0.5812 | weighted f1-score: 0.5811
+The epoch: 135 | phase: test | loss: 3.1497 | accuracy: 0.6712 | mean f1-score: 0.6564 | weighted f1-score: 0.6501
+Epoch 135 completed in 0m 5s
+Epoch 136/149
+----------
+The epoch: 136 | phase: train | loss: 0.0042 | accuracy: 0.9985 | mean f1-score: 0.9985 | weighted f1-score: 0.9985
+The epoch: 136 | phase: val | loss: 3.6505 | accuracy: 0.6072 | mean f1-score: 0.5822 | weighted f1-score: 0.5834
+The epoch: 136 | phase: test | loss: 3.1235 | accuracy: 0.6655 | mean f1-score: 0.6521 | weighted f1-score: 0.6460
+Epoch 136 completed in 0m 4s
+Epoch 137/149
+----------
+The epoch: 137 | phase: train | loss: 0.0052 | accuracy: 0.9982 | mean f1-score: 0.9982 | weighted f1-score: 0.9982
+The epoch: 137 | phase: val | loss: 3.7031 | accuracy: 0.6025 | mean f1-score: 0.5780 | weighted f1-score: 0.5790
+The epoch: 137 | phase: test | loss: 2.9004 | accuracy: 0.6893 | mean f1-score: 0.6810 | weighted f1-score: 0.6764
+Epoch 137 completed in 0m 4s
+Epoch 138/149
+----------
+The epoch: 138 | phase: train | loss: 0.0040 | accuracy: 0.9988 | mean f1-score: 0.9988 | weighted f1-score: 0.9988
+The epoch: 138 | phase: val | loss: 3.2347 | accuracy: 0.5966 | mean f1-score: 0.5724 | weighted f1-score: 0.5752
+The epoch: 138 | phase: test | loss: 3.1934 | accuracy: 0.6697 | mean f1-score: 0.6468 | weighted f1-score: 0.6403
+Epoch 138 completed in 0m 4s
+Epoch 139/149
+----------
+The epoch: 139 | phase: train | loss: 0.0037 | accuracy: 0.9989 | mean f1-score: 0.9989 | weighted f1-score: 0.9989
+The epoch: 139 | phase: val | loss: 3.4135 | accuracy: 0.5992 | mean f1-score: 0.5766 | weighted f1-score: 0.5790
+The epoch: 139 | phase: test | loss: 3.5489 | accuracy: 0.6187 | mean f1-score: 0.5887 | weighted f1-score: 0.5815
+Epoch 139 completed in 0m 4s
+Epoch 140/149
+----------
+The epoch: 140 | phase: train | loss: 0.0037 | accuracy: 0.9990 | mean f1-score: 0.9990 | weighted f1-score: 0.9990
+The epoch: 140 | phase: val | loss: 3.6449 | accuracy: 0.5963 | mean f1-score: 0.5685 | weighted f1-score: 0.5703
+The epoch: 140 | phase: test | loss: 3.2054 | accuracy: 0.6564 | mean f1-score: 0.6365 | weighted f1-score: 0.6302
+Epoch 140 completed in 0m 4s
+Epoch 141/149
+----------
+The epoch: 141 | phase: train | loss: 0.0038 | accuracy: 0.9987 | mean f1-score: 0.9986 | weighted f1-score: 0.9987
+The epoch: 141 | phase: val | loss: 3.5825 | accuracy: 0.6008 | mean f1-score: 0.5784 | weighted f1-score: 0.5801
+The epoch: 141 | phase: test | loss: 2.7285 | accuracy: 0.6751 | mean f1-score: 0.6588 | weighted f1-score: 0.6540
+Epoch 141 completed in 0m 5s
+Epoch 142/149
+----------
+The epoch: 142 | phase: train | loss: 0.0032 | accuracy: 0.9988 | mean f1-score: 0.9988 | weighted f1-score: 0.9988
+The epoch: 142 | phase: val | loss: 3.6300 | accuracy: 0.5975 | mean f1-score: 0.5760 | weighted f1-score: 0.5777
+The epoch: 142 | phase: test | loss: 2.9576 | accuracy: 0.6773 | mean f1-score: 0.6694 | weighted f1-score: 0.6648
+Epoch 142 completed in 0m 4s
+Epoch 143/149
+----------
+The epoch: 143 | phase: train | loss: 0.0049 | accuracy: 0.9986 | mean f1-score: 0.9986 | weighted f1-score: 0.9986
+The epoch: 143 | phase: val | loss: 3.7783 | accuracy: 0.6082 | mean f1-score: 0.5884 | weighted f1-score: 0.5890
+The epoch: 143 | phase: test | loss: 3.0084 | accuracy: 0.6710 | mean f1-score: 0.6614 | weighted f1-score: 0.6564
+Epoch 143 completed in 0m 4s
+Epoch 144/149
+----------
+The epoch: 144 | phase: train | loss: 0.0026 | accuracy: 0.9992 | mean f1-score: 0.9992 | weighted f1-score: 0.9992
+The epoch: 144 | phase: val | loss: 3.5097 | accuracy: 0.6036 | mean f1-score: 0.5835 | weighted f1-score: 0.5850
+The epoch: 144 | phase: test | loss: 3.4095 | accuracy: 0.6240 | mean f1-score: 0.6053 | weighted f1-score: 0.5995
+Epoch 144 completed in 0m 4s
+Epoch 145/149
+----------
+The epoch: 145 | phase: train | loss: 0.0033 | accuracy: 0.9990 | mean f1-score: 0.9990 | weighted f1-score: 0.9990
+The epoch: 145 | phase: val | loss: 2.9346 | accuracy: 0.6142 | mean f1-score: 0.5982 | weighted f1-score: 0.6009
+The epoch: 145 | phase: test | loss: 3.0664 | accuracy: 0.6466 | mean f1-score: 0.6255 | weighted f1-score: 0.6198
+Epoch 145 completed in 0m 4s
+Epoch 146/149
+----------
+The epoch: 146 | phase: train | loss: 0.0059 | accuracy: 0.9982 | mean f1-score: 0.9982 | weighted f1-score: 0.9982
+The epoch: 146 | phase: val | loss: 3.6286 | accuracy: 0.5978 | mean f1-score: 0.5730 | weighted f1-score: 0.5742
+The epoch: 146 | phase: test | loss: 2.9210 | accuracy: 0.6793 | mean f1-score: 0.6667 | weighted f1-score: 0.6634
+Epoch 146 completed in 0m 5s
+Epoch 147/149
+----------
+The epoch: 147 | phase: train | loss: 0.0042 | accuracy: 0.9984 | mean f1-score: 0.9983 | weighted f1-score: 0.9984
+The epoch: 147 | phase: val | loss: 3.9958 | accuracy: 0.5897 | mean f1-score: 0.5657 | weighted f1-score: 0.5670
+The epoch: 147 | phase: test | loss: 3.2138 | accuracy: 0.6517 | mean f1-score: 0.6413 | weighted f1-score: 0.6372
+Epoch 147 completed in 0m 4s
+Epoch 148/149
+----------
+The epoch: 148 | phase: train | loss: 0.0045 | accuracy: 0.9985 | mean f1-score: 0.9985 | weighted f1-score: 0.9985
+The epoch: 148 | phase: val | loss: 3.5907 | accuracy: 0.6018 | mean f1-score: 0.5853 | weighted f1-score: 0.5859
+The epoch: 148 | phase: test | loss: 3.2092 | accuracy: 0.6668 | mean f1-score: 0.6516 | weighted f1-score: 0.6466
+Epoch 148 completed in 0m 4s
+Epoch 149/149
+----------
+The epoch: 149 | phase: train | loss: 0.0043 | accuracy: 0.9987 | mean f1-score: 0.9986 | weighted f1-score: 0.9987
+The epoch: 149 | phase: val | loss: 3.4908 | accuracy: 0.5936 | mean f1-score: 0.5723 | weighted f1-score: 0.5739
+The epoch: 149 | phase: test | loss: 2.8784 | accuracy: 0.6602 | mean f1-score: 0.6448 | weighted f1-score: 0.6402
+Epoch 149 completed in 0m 4s
+The best epoch is 4
+Phase: train, loss: 0.24733929667749888, accuracy: 0.922360883797054, f1_score: 0.9229453803985063, f1_score weighted: 0.922406187116301 {'train': [], 'val': [], 'test': []}
+Phase: val, loss: 0.8237037244507868, accuracy: 0.7359171504785815, f1_score: 0.7388626263912293, f1_score weighted: 0.7391979373339884 {'train': [], 'val': [], 'test': []}
+Phase: test, loss: 0.7763663396211801, accuracy: 0.7777777777777778, f1_score: 0.7727307157809872, f1_score weighted: 0.7702947213709012 {'train': [], 'val': [], 'test': []}
+------ Evaluation complete! ------
