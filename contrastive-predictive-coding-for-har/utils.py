@@ -68,9 +68,9 @@ def compute_best_metrics(running_meter, best_meter, classifier=False):
 
     return best_meter
 
-with open("loss.csv", mode='w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(['Epoch', 'Phase', 'Loss', 'Accuracy', 'Mean F1-score', 'Weighted F1-score'])
+# with open("loss.csv", mode='w', newline='') as file:
+#     writer = csv.writer(file)
+#     writer.writerow(['Epoch', 'Phase', 'Loss', 'Accuracy', 'Mean F1-score', 'Weighted F1-score'])
 
 
 def update_loss(phase, running_meter, loss, accuracy, epoch, accuracy_steps):
@@ -91,9 +91,9 @@ def update_loss(phase, running_meter, loss, accuracy, epoch, accuracy_steps):
           "f1-score: {:.4f} | weighted f1-score: {:.4f}"
           .format(epoch, phase, loss, accuracy, 0, 0))
     
-    with open("loss.csv", mode='a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([epoch, phase, loss, accuracy, 0, 0])
+    # with open("loss.csv", mode='a', newline='') as file:
+    #     writer = csv.writer(file)
+    #     writer.writerow([epoch, phase, loss, accuracy, 0, 0])
 
     return
 
@@ -154,10 +154,10 @@ def set_all_seeds(args):
 
     return
 
-metric_names = ['Epoch', 'Phase', 'Loss', 'Accuracy', 'Mean F1-score', 'Weighted F1-score']
-with open("metrics.csv", mode='w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(metric_names)
+# metric_names = ['Epoch', 'Phase', 'Loss', 'Accuracy', 'Mean F1-score', 'Weighted F1-score']
+# with open("metrics.csv", mode='w', newline='') as file:
+#     writer = csv.writer(file)
+#     writer.writerow(metric_names)
 
 def compute_classifier_metrics(actual_labels, pred_labels, phase,
                                running_meter, loss, epoch):
@@ -175,9 +175,9 @@ def compute_classifier_metrics(actual_labels, pred_labels, phase,
           .format(epoch, phase, loss, acc, f_score_macro, f_score_weighted))
     
     # Escreve as métricas
-    with open("metrics.csv", mode='a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([epoch, phase, loss, acc, f_score_macro, f_score_weighted])
+    # with open("metrics.csv", mode='a', newline='') as file:
+    #     writer = csv.writer(file)
+    #     writer.writerow([epoch, phase, loss, acc, f_score_macro, f_score_weighted])
 
 
     return running_meter

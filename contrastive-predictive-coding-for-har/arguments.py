@@ -49,17 +49,64 @@ def parse_args():
     # Random seed for reproducibility
     parser.add_argument('--random_seed', type=int, default=42)
 
+    parser.add_argument('--data_percentage', type=int, default=100,
+                        help='Percentage of data to use for training (default: 100)')
+
     args = parser.parse_args()
 
     # Setting parameters by the dataset
     
-    for dset in ['uci', 'wisdm', 'motionsense', 'KuHar_raw', 'realworld_thigh', 'realworld_waist']:
-        if args.dataset == dset:
-            args.input_size = 6
-            args.num_classes = 18
-            args.root_dir = '/workspaces/betania.silva/view_concatenated'
-            args.data_file = dset
-            break
+    args.root_dir = '/workspaces/betania.silva/view_concatenated'
+    args.input_size = 6
+
+    if args.dataset == 'UCI_raw_12':
+        args.data_file = 'UCI_raw_12'
+        args.num_classes = 13
+    elif args.dataset == 'UCI_raw':
+        args.data_file = 'UCI_raw'
+        args.num_classes = 7
+    elif args.dataset == 'MotionSense_raw':
+        args.data_file = 'MotionSense_raw'
+        args.num_classes = 6
+    elif args.dataset == 'KuHar_raw':
+        args.data_file = 'KuHar_raw'
+        args.num_classes = 18
+    elif args.dataset == 'RealWorld_raw':
+        args.data_file = 'RealWorld_raw'
+        args.num_classes = 9
+    elif args.dataset == 'KuHar_MotionSense':
+        args.data_file = 'KuHar_MotionSense'
+        args.num_classes = 18
+    elif args.dataset == 'UCI_KuHar':
+        args.data_file = 'UCI_KuHar'
+        args.num_classes = 18
+    elif args.dataset == 'UCI_raw_g':
+        args.data_file = 'UCI_raw_g'
+        args.num_classes = 7
+    elif args.dataset == 'UCI_MotionSense_KuHar_RealWorld':
+        args.data_file = 'UCI_MotionSense_KuHar_RealWorld'
+        args.num_classes = 18
+    elif args.dataset == 'KuHar_RealWorld':
+        args.data_file = 'KuHar_RealWorld'
+        args.num_classes = 18
+    elif args.dataset == 'UCI_MotionSense':
+        args.data_file = 'UCI_MotionSense'
+        args.num_classes = 13
+    elif args.dataset == 'UCI_RealWorld':
+        args.data_file = 'UCI_RealWorld'
+        args.num_classes = 9
+    elif args.dataset == 'MotionSense_RealWorld':
+        args.data_file = 'MotionSense_RealWorld'
+        args.num_classes = 9
+    elif args.dataset == 'KuHar_UCI_RealWorld':
+        args.data_file = 'KuHar_UCI_RealWorld'
+        args.num_classes = 18
+    elif args.dataset == 'KuHar_MotionSense_RealWorld':
+        args.data_file = 'KuHar_MotionSense_RealWorld'
+        args.num_classes = 18
+    elif args.dataset == 'UCI_MotionSense_RealWorld':
+        args.data_file = 'UCI_MotionSense_RealWorld'
+        args.num_classes = 13
 
     # if args.dataset == 'uci':
     #     args.input_size = 6
@@ -69,9 +116,10 @@ def parse_args():
 
     args.device = torch.device(
         "cuda:" + str(args.gpu_id) if torch.cuda.is_available() else "cpu")
-
+    
     # Conv padding size
     args.padding = int(args.kernel_size // 2)
 
     return args
 
+ 

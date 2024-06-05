@@ -196,6 +196,7 @@ class Classifier(nn.Module):
 
     def forward(self, inputs):
         encoder = self.predict_features(inputs)
+        #print("ENCODER", encoder.shape)
 
         softmax = self.softmax(encoder[:, -1, :])
 
@@ -203,6 +204,7 @@ class Classifier(nn.Module):
 
     def predict_features(self, inputs):
         r_out = self.encoder.predict_features(inputs)
+        #print("R_OUT", r_out.shape)
 
         return r_out
 
@@ -247,5 +249,6 @@ class PredictionNetwork(nn.Module):
 
     def forward(self, inputs):
         prediction = self.Wk(inputs)
+        print("PREDICTION", prediction.shape)
 
         return prediction
