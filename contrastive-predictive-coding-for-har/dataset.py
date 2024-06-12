@@ -109,9 +109,11 @@ def load_dataset(args, classifier=False):
         return batch_size
     
     # Get a subset of the dataset
-
-    def get_subset(dataset, percentage):
-        subset_size = int(len(dataset) * (percentage / 100.0))
+    def get_subset(dataset, data_percentage):
+        # print("Data Percentage", data_percentage)
+        subset_size = int(len(dataset) * (data_percentage / 100.0))
+        # print("Dataset Length", len(dataset))
+        # print("Subset Size", subset_size)
         indices = np.random.choice(len(dataset), subset_size, replace=False)
         return Subset(dataset, indices)
 

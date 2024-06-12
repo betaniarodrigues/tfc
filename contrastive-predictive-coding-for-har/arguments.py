@@ -12,8 +12,8 @@ def parse_args():
                     'Activity Recognition')
 
     # Data loading parameters
-    parser.add_argument('--window', type=int, default=50, help='Window size')
-    parser.add_argument('--overlap', type=int, default=25,
+    parser.add_argument('--window', type=int, default=60, help='Window size')
+    parser.add_argument('--overlap', type=int, default=30,
                         help='Overlap between consecutive windows')
 
     # Training settings
